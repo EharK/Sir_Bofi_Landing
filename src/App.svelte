@@ -39,9 +39,8 @@
         </div>
         <div class="pad">
             <div class="col">
-                <h3>Welcome, comrade.</h3>
                 <p class="text">
-                    A tool for crypto-dedicated individuals looking to advance their markets overview
+                    Sir Bofi is a tool for crypto-dedicated individuals looking to advance their markets overview
                     and
                     <span class="hl">lurk in the shadows for opportunities.</span> Demonstration:
                 </p>
