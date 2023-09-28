@@ -29,7 +29,7 @@ body, html {
 button {
     cursor: pointer;
     outline: none;
-    border: 1px solid var(--sglow-green);
+    border: 1px solid var(--sdark);
     background-color: transparent;
     color: var(--light);
     border-radius: 8px;
@@ -40,6 +40,7 @@ button {
     align-items: center;
     gap: 8px;
     font-size: 16px;
+    width: max-content;
 }
 button.with-bottom-icon {
     flex-direction: column;
@@ -50,7 +51,7 @@ button.light {
     color: var(--dark);
 }
 button.light:hover {
-    background-color: var(--slight);
+    background-color: var(--slight) !important;
     color: var(--sdark) !important;
 }
 button.bones {

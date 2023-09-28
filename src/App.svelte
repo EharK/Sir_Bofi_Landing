@@ -25,7 +25,7 @@
         return false;
     }
     const purchase = function () {
-        window.location.href = "https://buy.stripe.com/test_5kAaHH8MCg9Y4U07st";
+        window.open("https://buy.stripe.com/test_5kAaHH8MCg9Y4U07st", "_blank");
     }
 </script>
 
@@ -37,19 +37,22 @@
                 Sir Bofi
             </h1>
         </div>
-        <div class="pad">
-            <div class="col">
-                <p class="text">
-                    Sir Bofi is a tool for crypto-dedicated individuals looking to advance their markets overview
-                    and
-                    <span class="hl">lurk in the shadows for opportunities.</span> Demonstration:
-                </p>
-            </div>
-            <div class="col">
-                <video controls controlslist="nodownload">
-                    <source src="src/assets/sir_bofi_demo.mp4" type="video/mp4">
-                </video>
+        <div class="row landing-pads">
+            <div class="pad">
+                <div class="col">
+                    <h3>Private account</h3>
+                    <p class="text">
+                        Opportunities from 9000+ currencies and 600+ exchanges
+                        <span class="hl">at your fingertips.</span>
+                        Limited accounts available.
+                    </p>
+                </div>
                 <div class="buttons-wrapper">
+                    {#if cfasl}
+                        <span class="spinner"></span>
+                    {:else if position_available}
+                        <span class="text-glow">Available</span>
+                    {/if}
                     {#if !position_available}
                         <button class="{!cfasl || 'disabled'}" on:click={() => gkrlef(1)}>
                             <span>Check for availability</span>
@@ -59,24 +62,43 @@
                             <span>Purchase account</span>
                         </button>
                     {/if}
-                    {#if cfasl}
-                        <span class="spinner"></span>
-                    {:else if position_available}
-                        <span class="text-glow">Available</span>
-                    {/if}
+                </div>
+            </div>
+            <div class="pad">
+                <div class="col">
+                    <h3>Tailored software</h3>
+                    <p class="text">
+                        Reach out to me in case you have a tailored version of this software in mind!
+                    </p>
+                    <p class="text">
+                        <span class="hl">Starting from 2499€.</span>
+                    </p>
+                </div>
+                <div class="col">
+                    <div class="buttons-wrapper">
+                        <button>
+                            <span>Contact</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="readme" class="secondary-container">
+        <div class="col center">
+            <h2>Demonstration</h2>
+            <video controls controlslist="nodownload">
+                <source src="src/assets/sir_bofi_demo.mp4" type="video/mp4">
+            </video>
+        </div>
         <a href="#readme" class="hovering-icon-container">
             <span class="hovering-icon-wrapper">
-                <button class="bones with-bottom-icon">
+                <span class="col">
                     <span>READ ME FIRST</span>
                     <span>↓</span>
-                </button>
+                    </span>
             </span>
         </a>
+    </div>
+    <div id="readme" class="secondary-container">
         <div class="readme-text-container">
             <div class="text-section">
                 <img class="logo black as-title" src="sir_bofi.svg" alt="">
@@ -247,6 +269,10 @@
         gap: 10px;
     }
 
+    .landing-pads {
+        gap: 40px;
+    }
+
     .logo {
         width: 64px;
         height: 64px;
@@ -272,7 +298,6 @@
 
     .back-up-button {
         background-color: var(--sdark);
-        outline: 1px solid var(--sglow-green);
         border-radius: 50%;
         aspect-ratio: 1/1;
         width: 50px;
@@ -284,10 +309,9 @@
     }
 
     .back-up-button:hover {
-        outline: 1px solid var(--glow-green);
         background-color: var(--light-green);
         color: var(--sdark);
-        transform: translateY(-5px);
+        transform: translateY(-2px);
     }
 
     .back-up-button:active {
@@ -296,14 +320,15 @@
     }
 
     .landing-wrapper {
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         display: flex;
         align-items: center;
-        padding: 12vh 0 100px 0;
-        gap: 20px;
+        padding: 12vh 0 0 0;
+        gap: 100px;
         flex-direction: column;
         background: url("./assets/blurred.png");
+        background-attachment: fixed;
         background-size: cover;
         z-index: 10;
     }
@@ -320,23 +345,6 @@
         text-align: start;
     }
 
-    .pad {
-        height: max-content;
-        width: 60vw;
-        min-width: 400px;
-        max-width: 500px;
-        min-height: 0;
-        padding: 40px 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background: linear-gradient(-45deg, var(--dark) 0%, #0d0d0d 100%);
-        outline: var(--sglow-green) 1px solid;
-        border-radius: 8px;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-        transition: all 0.5s ease;
-    }
-
     .col {
         display: flex;
         flex-direction: column;
@@ -344,10 +352,15 @@
         min-width: 0;
     }
 
+    .center {
+        align-items: center;
+    }
+
     video {
         border-radius: 8px;
-        filter: brightness(0.5);
+        filter: brightness(0.7);
         transition: all 0.5s ease;
+        max-width: 50%;
     }
 
     video:hover {
@@ -358,50 +371,29 @@
         filter: brightness(1);
     }
 
-    @media screen and (max-height: 900px) {
-        .text {
-            font-size: 14px;
-        }
-
-        video {
-            max-width: 300px;
-        }
-
-        .landing-wrapper {
-            padding: 5vh 0 100px 0;
-        }
-
-        @media screen and (max-height: 700px) {
-
-            .pad {
-                overflow-y: auto;
-            }
-
-            .pad::-webkit-scrollbar {
-                width: 0;
-            }
-
-            @media screen and (min-width: 960px) {
-                .pad {
-                    flex-direction: row;
-                    justify-content: space-around;
-                    max-width: 800px;
-                    padding: 40px;
-                }
-
-                .landing-wrapper {
-                    padding: 10px 20px 100px 20px;
-                }
-
-                video {
-                    max-width: 80%;
-                }
-            }
-        }
+    .pad {
+        height: max-content;
+        width: 60vw;
+        min-width: 400px;
+        max-width: 500px;
+        min-height: 400px;
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20px;
+        background: linear-gradient(-45deg, #0f1a0f 0%, #0d0d0d 100%);
+        filter: grayscale(0.6);
+        outline: hsla(0deg, 0%, 90%, 0.25) 1px solid;
+        border-radius: 8px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
     }
 
     .pad:hover {
-        outline: var(--glow-green) 1px solid;
+        filter: grayscale(0);
+        outline: #99ff99 1px solid;
         box-shadow: 0 0 40px rgba(33, 255, 35, 0.15);
     }
 
@@ -409,7 +401,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
         margin-top: 20px;
     }
 
@@ -445,6 +437,7 @@
         padding: 100px 50px;
         color: var(--dark);
         transition: all 0.5s ease;
+        z-index: 20;
     }
 
     .secondary-container .readme-text-container {
@@ -469,16 +462,28 @@
     }
 
     .hovering-icon-container {
-        position: absolute;
-        top: -100px;
-        width: 100%;
-        height: 100px;
+        position: sticky;
+        bottom: 0;
+        width: 120px;
+        height: 60px;
+        padding-top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+        background-color: var(--dark);
+        border-radius: 8px 8px 0 0;
         z-index: 10;
         cursor: pointer;
+        transition: all 0.5s ease;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hovering-icon-container:active {
+        cursor: default;
+    }
+
+    .hovering-icon-container:hover .col {
+        color: var(--glow-green);
     }
 
     .hovering-icon-wrapper {
@@ -490,12 +495,21 @@
         animation: bounce 2s infinite;
     }
 
+    .hovering-icon-wrapper .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 10px;
+        font-size: 14px;
+        color: var(--slight);
+    }
+
     @keyframes bounce {
         0% {
             transform: translateY(0);
         }
         80% {
-            transform: translateY(-20px);
+            transform: translateY(-10px);
         }
         100% {
             transform: translateY(0);
@@ -555,7 +569,47 @@
         text-decoration-thickness: 1px;
     }
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-height: 900px) {
+        .text {
+            font-size: 14px;
+        }
+
+        video {
+            max-width: 80%;
+        }
+
+        .landing-wrapper {
+            padding: 5vh 0 0 0;
+        }
+
+        @media screen and (max-height: 700px) {
+
+            .pad {
+                overflow-y: auto;
+            }
+
+            .pad::-webkit-scrollbar {
+                width: 0;
+            }
+
+            @media screen and (min-width: 960px) {
+
+                .landing-wrapper {
+                    padding: 10px 20px 0 20px;
+                }
+
+                video {
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+
+        .row {
+            flex-direction: column;
+        }
 
         .secondary-container {
             padding: 40px 20px;
@@ -577,15 +631,29 @@
                 margin-bottom: 30px;
             }
 
+            .row {
+                flex-direction: column;
+            }
+
             .pad {
                 min-width: 340px;
                 background: transparent;
                 box-shadow: none;
                 outline: 0;
-                padding: 20px;
+                padding: 20px 20%;
                 width: 100%;
+                min-height: max-content;
                 margin-bottom: 100px;
                 align-items: center;
+                filter: unset;
+            }
+
+            button:not(.bones) {
+                background-color: var(--dark);
+            }
+
+            button:not(.bones):hover {
+                background-color: var(--light-green);
             }
 
             .pad .col {
@@ -604,8 +672,13 @@
                 filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
             }
 
+            video {
+                max-width: 100%;
+            }
+
             .landing-wrapper {
-                padding: 20px 0;
+                padding: 20px 0 0;
+                background-attachment: scroll;
             }
 
             .secondary-container {
@@ -617,22 +690,26 @@
                 border-radius: 0;
             }
 
-            @media screen and (max-width: 400px) {
-
-                .back-up-button-wrapper {
-                    padding: 10px 20px;
-                }
+            .hovering-icon-container {
+                position: relative;
+            }
 
                 @keyframes bounce {
                     0% {
                         transform: translateY(0);
                     }
                     80% {
-                        transform: translateY(-40px);
+                        transform: translateY(-10px);
                     }
                     100% {
                         transform: translateY(0);
                     }
+                }
+
+            @media screen and (max-width: 400px) {
+
+                .back-up-button-wrapper {
+                    padding: 10px 20px;
                 }
             }
         }
