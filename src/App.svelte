@@ -21,7 +21,7 @@
         setTimeout(() => {
             cfasl = false;
             position_available = true;
-        }, 1864);
+        }, Math.floor(Math.random() * 3000) + 500);
         return false;
     }
     const purchase = function () {
@@ -30,7 +30,7 @@
 </script>
 
 <main>
-    <div id="landing" class="landing-wrapper">
+    <div id="landing" class="landing-wrapper relative">
         <div class="landing-title-wrapper row">
             <img class="logo" src="sir_bofi.svg" alt="">
             <h1 class="xxl">
@@ -43,8 +43,8 @@
                     <h3>Private account</h3>
                     <p class="text">
                         Opportunities from 9000+ currencies and 600+ exchanges
-                        <span class="hl">at your fingertips.</span>
-                        Limited accounts available.
+                        at your fingertips.
+                        <span class="hl">Limited accounts available.</span>
                     </p>
                 </div>
                 <div class="buttons-wrapper">
@@ -54,11 +54,11 @@
                         <span class="text-glow">Available</span>
                     {/if}
                     {#if !position_available}
-                        <button class="{!cfasl || 'disabled'}" on:click={() => gkrlef(1)}>
+                        <button class="{!cfasl ? '' : 'disabled'}" on:click={() => gkrlef(1)}>
                             <span>Check for availability</span>
                         </button>
                     {:else}
-                        <button class="{!cfasl || 'disabled'}" on:click={() => purchase()}>
+                        <button class="{!cfasl ? '' : 'disabled'}" on:click={() => purchase()}>
                             <span>Purchase account</span>
                         </button>
                     {/if}
@@ -77,7 +77,7 @@
                 <div class="col">
                     <div class="buttons-wrapper">
                         <button>
-                            <span>Contact</span>
+                            <a href="mailto:wyyu2hejo1ja@opayq.com">Contact</a>
                         </button>
                     </div>
                 </div>
@@ -87,16 +87,22 @@
             <h2>Demonstration</h2>
             <video controls controlslist="nodownload">
                 <source src="src/assets/sir_bofi_demo.mp4" type="video/mp4">
+                <track kind="captions" default src="">
             </video>
         </div>
-        <a href="#readme" class="hovering-icon-container">
+        <div class="read-me-first-hover-block-container">
+            <a href="#readme" class="hovering-icon-container">
             <span class="hovering-icon-wrapper">
                 <span class="col">
                     <span>READ ME FIRST</span>
                     <span>↓</span>
-                    </span>
+                </span>
             </span>
-        </a>
+            </a>
+        </div>
+        <div class="ambient absolute">
+            @
+        </div>
     </div>
     <div id="readme" class="secondary-container">
         <div class="readme-text-container">
@@ -104,13 +110,13 @@
                 <img class="logo black as-title" src="sir_bofi.svg" alt="">
                 <h2>Introduction</h2>
                 <p>
-                    Chances of you arriving here are very low as the platform is advertised to limited audiences. The
-                    platform “Sir Bofi” is <span class="hl">not a money printer!</span> It is merely a co-pilot for
+                    Chances of you arriving here are very low as the platform is advertised to hand-picked communities.
+                    The platform “Sir Bofi” is <span class="hl">not a money printer!</span> It is merely a co-pilot for
                     knowledgeable crypto-dedicated individuals looking to advance their markets overview and lurk in the
                     shadows for opportunities (<span class="hl"><a class="inline"
                                                                    href="#documentation">Documentation</a></span>).
                     I am willing to provide this software through one time fee thanks to releasing the platform without
-                    using hosting, domain names or external recurring fee services. I am also completely aware of
+                    using hosting, domain names or external recurring fee services. I am also aware of
                     possible diminishing of opportunities related to over-populating the platform - for that reason
                     <span
                             class="hl">I am only allowing a specific amount of dedicated users on the platform.</span>
@@ -118,18 +124,32 @@
             </div>
             <div class="text-section">
                 <h2>Before using the platform!</h2>
-                <h3>Crucial to know</h3>
+                <h3>Your safety</h3>
+                <p>
+                    As I am not a big tech company I have not gone through the process of signing the application
+                    with special certifications or buying them from Apple or Microsoft. For that reason you might
+                    receive a warning from your operating system that the application is suspicious. <span
+                            class="hl">I completely understand this sounds concerning :D BUT </span> - it is
+                    what Apple and Microsoft do to applications that are simply not signed by their (not easily acquirable)
+                    certificates. Feel free to run the application through any antivirus software or test it any other
+                    way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
+                    - a platform that checks the application with 50+ antivirus software.
+
+                    <span class="hl">You can
+                    check the results <a href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
+                                         class="inline" target="_blank">here.</a></span>
+                </p>
                 <p>
                     The platform uses tons of raw data including <span class="hl">9000+ different cryptos and 600+ exchanges.</span>
                     Not all of the exchanges like to show legit data. <span class="hl"> Thankfully, I have filtered them for you.</span>
                     I have personally listed exchanges that have 4+ out of 5 rating on apps store together with an
                     appropriate amount of downloads - the ones listed under advanced settings (also include 3-4
-                    decentralised exchanges to give more depth to the results). Many of them either modify or
+                    decentralised exchanges to give more depth to the results). Many of others either modify or
                     strongly
                     delay
                     their market data. For that reason it is important you know what you are doing and apply filters
                     accordingly. It is very easy to stumble upon false positives and <span class="hl">you need to know enough about crypto</span>
-                    industry to differentiate or filter out true positives amongst them.
+                     to differentiate or filter out true positives amongst them.
                 </p>
                 <p>
                     Anyways, more concrete points you should acknowledge:
@@ -138,10 +158,11 @@
                     <li>
                         <p>
                         <span class="bold">Number of market pairs to check is limited <span
-                                class="hl">for a reason</span></span> - it is the amount of pairs checked per every
-                            crypto checked and sends out a seperate request every time which might overflow the network.
-                            If any of you finds a workaround - it is not recommended to go over the limits in your very
-                            own interest as it might harm the entire system robbing you of your own opportunities.
+                                class="hl">for a reason</span></span> - it is the amount of trading pairs checked per every
+                            crypto. Cryptos are fetched with one request yet every crypto has hundreds of trading pairs
+                            and trading pairs are fetched separately per every crypto. If any of you finds a workaround
+                            - it is not recommended to go over the limits in your very own interest as it might harm
+                            the entire system robbing you of your own opportunities.
                         </p></li>
                     <li><p>
                         <span class="bold">Be sure to filter trading category (spot / perpetuals)</span> - <span
@@ -231,8 +252,8 @@
                     In case there is a position available you can purchase it from the button “Purchase account”. After
                     that I will manually send you a completely text-based email to make sure the initial reach out does
                     not end up in your spam. Then I will manually create an account for you and send the credentials
-                    together with the software to your email (<span class="hl">credential will be sent using a disposable link that shows
-                    the data only once</span>). Thats it - you have it :D.
+                    together with the software download link to your email (<span class="hl">credential will be sent
+                    using a disposable link that shows the data only once</span>). Thats it - you have it :D.
                 </p>
             </div>
             <div class="text-section">
@@ -247,20 +268,56 @@
                     </a></span> of
                     trading price aribtrage. In most of those types of cases they discovered the opportunities
                     accidentally and thanks to working closely with markets daily. The name Sir Bofi comes from initial
-                    name Cyrbofi. Cyrbofi is a combination of letters from the phrase “[C]r[y]pto a[rb]itrage
+                    name Cyrbofi which is a combination of letters from the phrase “[C]r[y]pto a[rb]itrage
                     [o]pportunity [fi]nder”.
                 </p>
             </div>
         </div>
         <div class="back-up-button-wrapper">
             <a href="#landing" class="back-up-button">
-                <p>↑</p>
+                <p style="margin-top: -4px;">↑</p>
             </a>
         </div>
     </div>
 </main>
 
 <style>
+
+    .relative {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .absolute {
+        position: absolute;
+    }
+
+    .ambient {
+        user-select: none;
+        font-size: 5000px;
+        margin-top: -1800px;
+        line-height: 1;
+        z-index: -1;
+        animation: rotate 50s infinite linear;
+        filter: blur(40px);
+        opacity: 0.20;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(calc(360deg * 1));
+        }
+        100% {
+            transform: rotate(calc(360deg * 2));
+        }
+    }
+
+    *::selection {
+        background-color: var(--light-green);
+    }
 
     .row {
         display: flex;
@@ -331,10 +388,6 @@
         background-attachment: fixed;
         background-size: cover;
         z-index: 10;
-    }
-
-    .landing-wrapper:hover {
-
     }
 
     .landing-wrapper h1,
@@ -416,6 +469,8 @@
 
     .pad span.hl {
         background-color: var(--ghighlight);
+        padding: 0 4px;
+        margin-left: -4px;
     }
 
     @keyframes spin {
@@ -461,9 +516,16 @@
         padding: 10px 20px;
     }
 
-    .hovering-icon-container {
+    .read-me-first-hover-block-container {
         position: sticky;
         bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 40px;
+    }
+
+    .hovering-icon-container {
         width: 120px;
         height: 60px;
         padding-top: 10px;
@@ -475,7 +537,6 @@
         z-index: 10;
         cursor: pointer;
         transition: all 0.5s ease;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
 
     .hovering-icon-container:active {
@@ -694,17 +755,17 @@
                 position: relative;
             }
 
-                @keyframes bounce {
-                    0% {
-                        transform: translateY(0);
-                    }
-                    80% {
-                        transform: translateY(-10px);
-                    }
-                    100% {
-                        transform: translateY(0);
-                    }
+            @keyframes bounce {
+                0% {
+                    transform: translateY(0);
                 }
+                80% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
 
             @media screen and (max-width: 400px) {
 
