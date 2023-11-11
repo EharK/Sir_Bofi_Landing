@@ -139,6 +139,7 @@
                     check the results <a href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
                                          class="inline" target="_blank">here.</a></span>
                 </p>
+                <h3>Crucial to know</h3>
                 <p>
                     The platform uses tons of raw data including <span class="hl">9000+ different cryptos and 600+ exchanges.</span>
                     Not all of the exchanges like to show legit data. <span class="hl"> Thankfully, I have filtered them for you.</span>
