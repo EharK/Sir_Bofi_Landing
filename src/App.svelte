@@ -30,7 +30,7 @@
 </script>
 
 <main>
-    <div id="landing" class="landing-wrapper relative">
+    <div id="landing" class="primary-container">
         <div class="landing-title-wrapper row">
             <img class="logo" src="sir_bofi.svg" alt="">
             <h1 class="xxl">
@@ -77,7 +77,7 @@
                 <div class="col">
                     <div class="buttons-wrapper">
                         <button>
-                            <a href="mailto:wyyu2hejo1ja@opayq.com">Contact</a>
+                            <a href="mailto:sirbofi@gmail.com">Contact</a>
                         </button>
                     </div>
                 </div>
@@ -90,18 +90,18 @@
                 <track kind="captions" default src="">
             </video>
         </div>
-        <div class="read-me-first-hover-block-container">
-            <a href="#readme" class="hovering-icon-container">
-            <span class="hovering-icon-wrapper">
-                <span class="col">
-                    <span>READ ME FIRST</span>
-                    <span>↓</span>
-                </span>
+        <a href="#readme" class="hovering-icon-container">
+        <span class="hovering-icon-wrapper">
+            <span class="col">
+                <span>READ ME FIRST</span>
+                <span>↓</span>
             </span>
-            </a>
-        </div>
-        <div class="ambient absolute">
-            @
+        </span>
+        </a>
+        <div class="ambient-wrapper">
+            <div class="ambient">
+                @
+            </div>
         </div>
     </div>
     <div id="readme" class="secondary-container">
@@ -111,7 +111,7 @@
                 <h2>Introduction</h2>
                 <p>
                     Chances of you arriving here are very low as the platform is advertised to hand-picked communities.
-                    The platform “Sir Bofi” is <span class="hl">not a money printer!</span> It is merely a co-pilot for
+                    The platform “Sir Bofi” is <span class="hl">not a money printer!</span> It is a co-pilot for
                     knowledgeable crypto-dedicated individuals looking to advance their markets overview and lurk in the
                     shadows for opportunities (<span class="hl"><a class="inline"
                                                                    href="#documentation">Documentation</a></span>).
@@ -119,26 +119,13 @@
                     using hosting, domain names or external recurring fee services. I am also aware of
                     possible diminishing of opportunities related to over-populating the platform - for that reason
                     <span
-                            class="hl">I am only allowing a specific amount of dedicated users on the platform.</span>
+                            class="hl">I am only allowing a specific amount of dedicated users on the platform and will
+                        increase the price in relation to the amount of users added.
+                    </span>
                 </p>
             </div>
             <div class="text-section">
                 <h2>Before using the platform!</h2>
-                <h3>Your safety</h3>
-                <p>
-                    As I am not a big tech company I have not gone through the process of signing the application
-                    with special certifications or buying them from Apple or Microsoft. For that reason you might
-                    receive a warning from your operating system that the application is suspicious. <span
-                            class="hl">I completely understand this sounds concerning :D BUT </span> - it is
-                    what Apple and Microsoft do to applications that are simply not signed by their (not easily acquirable)
-                    certificates. Feel free to run the application through any antivirus software or test it any other
-                    way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
-                    - a platform that checks the application with 50+ antivirus software.
-
-                    <span class="hl">You can
-                    check the results <a href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
-                                         class="inline" target="_blank">here.</a></span>
-                </p>
                 <h3>Crucial to know</h3>
                 <p>
                     The platform uses tons of raw data including <span class="hl">9000+ different cryptos and 600+ exchanges.</span>
@@ -159,9 +146,9 @@
                     <li>
                         <p>
                         <span class="bold">Number of market pairs to check is limited <span
-                                class="hl">for a reason</span></span> - it is the amount of trading pairs checked per every
-                            crypto. Cryptos are fetched with one request yet every crypto has hundreds of trading pairs
-                            and trading pairs are fetched separately per every crypto. If any of you finds a workaround
+                                class="hl">for a reason</span> (up to 1000)</span> - it is the amount of trading pairs checked per every
+                            crypto. Cryptos are fetched with one request yet every crypto can have thousands of trading pairs
+                            and trading pairs are fetched separately per every crypto. In case any of you finds a workaround
                             - it is not recommended to go over the limits in your very own interest as it might harm
                             the entire system robbing you of your own opportunities.
                         </p></li>
@@ -179,6 +166,26 @@
                         results.
                     </p></li>
                 </ol>
+                <h3>Your safety</h3>
+                <p>
+                    As I am not a big tech company I have not gone through the process of signing the application
+                    with special certifications or buying them from Apple or Microsoft. For that reason you might
+                    receive a warning from your operating system that the application is suspicious. <span
+                            class="hl">I completely understand this sounds concerning :D BUT </span> - it is
+                    what Apple and Microsoft do to applications that are simply not signed by their (not easily acquirable)
+                    certificates. Feel free to run the application through any antivirus software or test it any other
+                    way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
+                    - a platform that checks the application with 50+ antivirus software.
+
+                    <span class="hl">You can
+                    check the results <a href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
+                                         class="inline" target="_blank">here.</a></span>
+                </p>
+                <h3>Availability</h3>
+                <p>
+                    I am working on building this application for macOS and Linux but for now it is only available for
+                    Windows. The tech stack of the application is Nuxt, Electron and a classic Node backend api server.
+                </p>
             </div>
             <div id="documentation" class="text-section">
                 <h2>Documentation</h2>
@@ -284,24 +291,28 @@
 
 <style>
 
-    .relative {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .absolute {
+    .ambient-wrapper {
         position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+        top: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        z-index: 0;
     }
 
     .ambient {
         user-select: none;
-        font-size: 5000px;
-        margin-top: -1800px;
-        line-height: 1;
-        z-index: -1;
-        animation: rotate 50s infinite linear;
+        font-size: 4080px;
+        margin-top: -1200px;
+        animation: rotate 50s linear infinite;
+        line-height: 1.2;
         filter: blur(40px);
-        opacity: 0.20;
+        opacity: 0.25;
+        font-weight: bold;
     }
 
     @keyframes rotate {
@@ -375,28 +386,6 @@
     .back-up-button:active {
         cursor: default;
         opacity: 0.5;
-    }
-
-    .landing-wrapper {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding: 12vh 0 0 0;
-        gap: 100px;
-        flex-direction: column;
-        background: url("./assets/blurred.png");
-        background-attachment: fixed;
-        background-size: cover;
-        z-index: 10;
-    }
-
-    .landing-wrapper h1,
-    .landing-wrapper h2,
-    .landing-wrapper h3,
-    .landing-wrapper p {
-        color: var(--light);
-        text-align: start;
     }
 
     .col {
@@ -483,6 +472,32 @@
         }
     }
 
+    .primary-container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 12vh 0 0 0;
+        gap: 100px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: url("./assets/blurred.png") fixed;
+        background-size: cover;
+        z-index: 10;
+    }
+
+    .primary-container :not(.ambient-wrapper) {
+        z-index: 10;
+    }
+
+    .primary-container h1,
+    .primary-container h2,
+    .primary-container h3,
+    .primary-container p {
+        color: var(--light);
+        text-align: start;
+    }
+
     .secondary-container {
         position: relative;
         display: flex;
@@ -493,6 +508,7 @@
         padding: 100px 50px;
         color: var(--dark);
         transition: all 0.5s ease;
+        background-color: var(--slight);
         z-index: 20;
     }
 
@@ -514,23 +530,18 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 10px 20px;
-    }
-
-    .read-me-first-hover-block-container {
-        position: sticky;
-        bottom: 0;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        padding: 0 40px;
+        padding: 30px 20px;
     }
 
     .hovering-icon-container {
+        position: sticky;
+        bottom: 0;
         width: 120px;
         height: 60px;
         padding-top: 10px;
         display: flex;
+        align-self: flex-end;
+        margin-right: 50px;
         align-items: center;
         justify-content: center;
         background-color: var(--dark);
@@ -600,11 +611,15 @@
         font-weight: 600;
     }
 
+    h2 + h3 {
+        margin-top: 0;
+    }
+
     h3 {
+        margin-top: 25px;
         font-size: 24px;
         font-weight: 600;
     }
-
     span.hl {
         background-color: var(--highlight);
         border-radius: 4px;
@@ -640,7 +655,7 @@
             max-width: 80%;
         }
 
-        .landing-wrapper {
+        .primary-container {
             padding: 5vh 0 0 0;
         }
 
@@ -656,8 +671,8 @@
 
             @media screen and (min-width: 960px) {
 
-                .landing-wrapper {
-                    padding: 10px 20px 0 20px;
+                .primary-container {
+                    padding: 5vh 20px 0 20px;
                 }
 
                 video {
@@ -738,8 +753,8 @@
                 max-width: 100%;
             }
 
-            .landing-wrapper {
-                padding: 20px 0 0;
+            .primary-container {
+                padding: 5vh 0 0;
                 background-attachment: scroll;
             }
 
