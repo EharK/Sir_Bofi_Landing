@@ -184,7 +184,7 @@
                 <h3>Availability</h3>
                 <p>
                     I am working on building this application for macOS and Linux but for now it is only available for
-                    Windows. The tech stack of the application is Nuxt, Electron and a classic Node backend api server.
+                    Windows. The tech stack of the application is Nuxt, Electron and a classic Node back-end API server.
                 </p>
             </div>
             <div id="documentation" class="text-section">
