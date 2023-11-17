@@ -343,8 +343,6 @@
             <div class="spinner-with-button-wrapper">
                 {#if cfasl}
                     <span class="spinner"></span>
-                {:else if position_available}
-                    <span class="text-glow">Available</span>
                 {/if}
                 {#if !position_available}
                     <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => gkrlef(1)}>
