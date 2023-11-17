@@ -2,6 +2,8 @@
     let cfasl = false;
     let position_available = false;
     let ll = false;
+    let caveman_title = "Private market overview tool to uncover "
+    let caveman_title_iterable_part = "opportunities";
     const gkrlef = function (uid) {
         cfasl = true;
         let xhr = new XMLHttpRequest();
@@ -27,15 +29,51 @@
     const purchase = function () {
         window.open("https://buy.stripe.com/test_5kAaHH8MCg9Y4U07st", "_blank");
     }
+
+    const typeWriterIterator = function (str) {
+        let i = 0;
+        const speed = 50;
+        const str_length = str.length;
+
+        const typeWriterInterval = setInterval(() => {
+            if (i < str.length) {
+                caveman_title_iterable_part += str.charAt(i);
+                i++;
+            } else {
+                clearInterval(typeWriterInterval);
+            }
+        }, speed);
+    }
+
+    const caveman_title_last_word_variants = ["opportunities", "changes", "potential"]
+
+    const wordIterator = function (i) {
+        const speed = 4000;
+        const list_len = caveman_title_last_word_variants.length;
+        let word = caveman_title_last_word_variants[i];
+        caveman_title_iterable_part = word.charAt(0);
+        typeWriterIterator(word.slice(1));
+        setTimeout(() => {
+            i === list_len - 1 ? wordIterator(0) : wordIterator(i + 1);
+        }, speed);
+    }
+
+    wordIterator(0);
 </script>
 
 <main>
     <div id="landing" class="primary-container">
-        <div class="landing-title-wrapper row">
-            <img class="logo" src="sir_bofi.svg" alt="">
-            <h1 class="xxl">
-                Sir Bofi
-            </h1>
+        <div class="landing-title-container">
+            <div class="landing-title-wrapper row">
+                <img class="logo" src="sir_bofi_new.svg" alt="">
+                <h1 class="xxl">
+                    Sir Bofi
+                </h1>
+            </div>
+            <div class="row">
+                <h2>{ caveman_title } </h2>
+                <h2 class="hl">{caveman_title_iterable_part}</h2>
+            </div>
         </div>
         <div class="row landing-pads">
             <div class="pad">
@@ -89,6 +127,22 @@
                 <source src="src/assets/sir_bofi_demo.mp4" type="video/mp4">
                 <track kind="captions" default src="">
             </video>
+            <div class="spinner-with-button-wrapper">
+                {#if cfasl}
+                    <span class="spinner"></span>
+                {:else if position_available}
+                    <span class="text-glow">Available</span>
+                {/if}
+                {#if !position_available}
+                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => gkrlef(1)}>
+                        <span>Check for availability</span>
+                    </button>
+                {:else}
+                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => purchase()}>
+                        <span>Purchase account</span>
+                    </button>
+                {/if}
+            </div>
         </div>
         <a href="#readme" class="hovering-icon-container">
         <span class="hovering-icon-wrapper">
@@ -107,14 +161,14 @@
     <div id="readme" class="secondary-container">
         <div class="readme-text-container">
             <div class="text-section">
-                <img class="logo black as-title" src="sir_bofi.svg" alt="">
+                <img class="logo black as-title" src="sir_bofi_new.svg" alt="">
                 <h2>Introduction</h2>
                 <p>
                     Chances of you arriving here are very low as the platform is advertised to hand-picked communities.
                     The platform “Sir Bofi” is <span class="hl">not a money printer!</span> It is a co-pilot for
                     knowledgeable crypto-dedicated individuals looking to advance their markets overview and lurk in the
-                    shadows for opportunities (<span class="hl"><a class="inline"
-                                                                   href="#documentation">Documentation</a></span>).
+                    shadows for opportunities (<span class="hl"><a class="inline" target="_blank"
+                                                                   href="https://rumvessel.gitbook.io/sir-bofi/">Documentation</a></span>).
                     I am willing to provide this software through one time fee thanks to releasing the platform without
                     using hosting, domain names or external recurring fee services. I am also aware of
                     possible diminishing of opportunities related to over-populating the platform - for that reason
@@ -126,6 +180,23 @@
             </div>
             <div class="text-section">
                 <h2>Before using the platform!</h2>
+                <h3>Your safety</h3>
+                <p>
+                    As I am not a big tech company I have not gone through the process of signing the application
+                    with special certifications or buying them from Apple or Microsoft. For that reason you might
+                    receive a warning from your operating system that the application is suspicious. <span
+                        class="hl">I completely understand this sounds concerning :D BUT </span> - it is
+                    what Apple and Microsoft do to applications that are simply not signed by their (not easily
+                    acquirable)
+                    certificates. Feel free to run the application through any antivirus software or test it any other
+                    way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
+                    - a platform that checks the application with 50+ antivirus software.
+
+                    <span class="hl">You can
+                    check the results <a
+                                href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
+                                class="inline" target="_blank">here.</a></span>
+                </p>
                 <h3>Crucial to know</h3>
                 <p>
                     The platform uses tons of raw data including <span class="hl">9000+ different cryptos and 600+ exchanges.</span>
@@ -137,7 +208,7 @@
                     delay
                     their market data. For that reason it is important you know what you are doing and apply filters
                     accordingly. It is very easy to stumble upon false positives and <span class="hl">you need to know enough about crypto</span>
-                     to differentiate or filter out true positives amongst them.
+                    to differentiate or filter out true positives amongst them.
                 </p>
                 <p>
                     Anyways, more concrete points you should acknowledge:
@@ -146,9 +217,12 @@
                     <li>
                         <p>
                         <span class="bold">Number of market pairs to check is limited <span
-                                class="hl">for a reason</span> (up to 1000)</span> - it is the amount of trading pairs checked per every
-                            crypto. Cryptos are fetched with one request yet every crypto can have thousands of trading pairs
-                            and trading pairs are fetched separately per every crypto. In case any of you finds a workaround
+                                class="hl">for a reason</span> (up to 1000)</span> - it is the amount of trading pairs
+                            checked per every
+                            crypto. Cryptos are fetched with one request yet every crypto can have thousands of trading
+                            pairs
+                            and trading pairs are fetched separately per every crypto. In case any of you finds a
+                            workaround
                             - it is not recommended to go over the limits in your very own interest as it might harm
                             the entire system robbing you of your own opportunities.
                         </p></li>
@@ -166,28 +240,13 @@
                         results.
                     </p></li>
                 </ol>
-                <h3>Your safety</h3>
-                <p>
-                    As I am not a big tech company I have not gone through the process of signing the application
-                    with special certifications or buying them from Apple or Microsoft. For that reason you might
-                    receive a warning from your operating system that the application is suspicious. <span
-                            class="hl">I completely understand this sounds concerning :D BUT </span> - it is
-                    what Apple and Microsoft do to applications that are simply not signed by their (not easily acquirable)
-                    certificates. Feel free to run the application through any antivirus software or test it any other
-                    way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
-                    - a platform that checks the application with 50+ antivirus software.
-
-                    <span class="hl">You can
-                    check the results <a href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
-                                         class="inline" target="_blank">here.</a></span>
-                </p>
                 <h3>Availability</h3>
                 <p>
                     I am working on building this application for macOS and Linux but for now it is only available for
                     Windows. The tech stack of the application is Nuxt, Electron and a classic Node back-end API server.
                 </p>
             </div>
-            <div id="documentation" class="text-section">
+            <!--div id="documentation" class="text-section">
                 <h2>Documentation</h2>
                 <h3>Logic</h3>
                 <p>
@@ -253,7 +312,7 @@
                         </p>
                     </li>
                 </ol>
-            </div>
+            </div-->
             <div class="text-section">
                 <h2><span class="hl">Claiming process</span></h2>
                 <p>
@@ -280,6 +339,23 @@
                     [o]pportunity [fi]nder”.
                 </p>
             </div>
+
+            <div class="spinner-with-button-wrapper">
+                {#if cfasl}
+                    <span class="spinner"></span>
+                {:else if position_available}
+                    <span class="text-glow">Available</span>
+                {/if}
+                {#if !position_available}
+                    <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => gkrlef(1)}>
+                        <span>Check for availability</span>
+                    </button>
+                {:else}
+                    <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => purchase()}>
+                        <span>Purchase account</span>
+                    </button>
+                {/if}
+            </div>
         </div>
         <div class="back-up-button-wrapper">
             <a href="#landing" class="back-up-button">
@@ -290,6 +366,34 @@
 </main>
 
 <style>
+
+    .spinner-with-button-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    #readme .spinner-with-button-wrapper {
+        align-self: flex-end;
+    }
+
+    h2.hl {
+        background-color: var(--ghighlight);
+        padding: 0 5px;
+        margin-left: -5px;
+        border-radius: 4px;
+    }
+
+    .relative {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .absolute {
+        position: absolute;
+    }
 
     .ambient-wrapper {
         position: absolute;
@@ -340,6 +444,19 @@
 
     .landing-pads {
         gap: 40px;
+    }
+
+    .landing-title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .landing-title-container h2 {
+        color: var(--slight);
+        opacity: 0.8;
+        text-align: center !important;
     }
 
     .logo {
@@ -448,7 +565,7 @@
         margin-top: 20px;
     }
 
-    .pad .spinner {
+    .spinner {
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -620,6 +737,7 @@
         font-size: 24px;
         font-weight: 600;
     }
+
     span.hl {
         background-color: var(--highlight);
         border-radius: 4px;

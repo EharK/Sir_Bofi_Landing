@@ -5,7 +5,7 @@
     --sdark: #333333;
     --dark: #1a1a1a;
     --highlight: rgba(255, 230, 128, 0.45);
-    --ghighlight: rgba(128, 255, 128, 0.3);
+    --ghighlight: rgba(92, 230, 205, 0.3);
     --glow-green: #00ff00;
     --sglow-green: #006600;
     --light-green: rgba(92, 230, 205, 0.2);
@@ -42,6 +42,20 @@ button {
     font-size: 16px;
     width: max-content;
 }
+button.big-button {
+    padding: 16px 32px;
+    font-size: 16px;
+}
+button.dark {
+    background-color: var(--sdark);
+    color: var(--light);
+}
+
+button.dark:hover {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
+}
+
 button.with-bottom-icon {
     flex-direction: column;
     gap: 0;
@@ -72,7 +86,7 @@ button:active {
     opacity: 0.8;
     cursor: unset;
 }
-button:not(.bones):hover {
+button:not(.bones):not(.dark):hover {
     background-color: var(--light-green);
     border: 1px solid var(--glow-green);
 }
