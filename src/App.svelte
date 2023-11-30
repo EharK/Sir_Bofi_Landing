@@ -70,7 +70,7 @@
                     Sir Bofi
                 </h1>
             </div>
-            <div class="row">
+            <div class="row caveman-title">
                 <h2>{ caveman_title } </h2>
                 <h2 class="hl">{caveman_title_iterable_part}</h2>
             </div>
@@ -448,13 +448,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 40px;
     }
 
     .landing-title-container h2 {
         color: var(--slight);
-        opacity: 0.8;
         text-align: center !important;
+        font-size: 36px;
     }
 
     .logo {
