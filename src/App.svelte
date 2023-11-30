@@ -27,7 +27,7 @@
         return false;
     }
     const purchase = function () {
-        window.open("https://buy.stripe.com/test_5kAaHH8MCg9Y4U07st", "_blank");
+        window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
     }
 
     const typeWriterIterator = function (str) {
