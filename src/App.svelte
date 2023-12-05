@@ -283,13 +283,13 @@
                 <h2>Before using the platform!</h2>
                 <h3>Your safety</h3>
                 <p>
-                    As I am not a big tech company I have not gone through the process of signing the application
-                    with special certifications or buying them from Apple or Microsoft. For that reason you might
-                    receive a warning from your operating system that the application is suspicious. <span
-                        class="hl">I completely understand this sounds concerning :D BUT </span> - it is
+                    The process of requiring code-signing certificates from Microsoft and Apple is ongoing and dependent
+                    on their slow behaviour.
+                    For that reason you might receive a warning from your operating system that the application
+                    is suspicious. <span class="hl">I completely understand this sounds concerning :D BUT </span> - it is
                     what Apple and Microsoft do to applications that are simply not signed by their (not easily
-                    acquirable)
-                    certificates. Feel free to run the application through any antivirus software or test it any other
+                    acquirable) certificates.
+                    Feel free to run the application through any antivirus software or test it any other
                     way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
                     - a platform that checks the application with 50+ antivirus software.
 
@@ -505,6 +505,27 @@
         justify-content: space-around;
         align-items: center;
         max-width: 1920px;
+    }
+
+    @media screen and (max-width: 960px) {
+        .base-row {
+            padding: 0 20px;
+            flex-direction: column;
+        }
+
+        .main-points-section .section {
+            padding: 40px 5px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .base-row.main-points-row {
+            width: 100%;
+        }
+
+        .main-points-section .section {
+            padding: 80px 5px;
+        }
     }
 
     .link-and-icon {
