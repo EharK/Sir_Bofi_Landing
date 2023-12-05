@@ -27,7 +27,8 @@
         return false;
     }
     const purchase = function () {
-        window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
+        // private_cache
+        return true;
     }
 
     const typeWriterIterator = function (str) {
@@ -92,8 +93,8 @@
                         <span class="text-glow">Available</span>
                     {/if}
                     {#if !position_available}
-                        <button class="{!cfasl ? '' : 'disabled'}" on:click={() => gkrlef(1)}>
-                            <span>Check for availability</span>
+                        <button class="{!cfasl ? '' : 'disabled'} coming-soon" on:click={() => gkrlef(1)}>
+                            <span>Coming soon</span>
                         </button>
                     {:else}
                         <button class="{!cfasl ? '' : 'disabled'}" on:click={() => purchase()}>
@@ -102,7 +103,7 @@
                     {/if}
                 </div>
             </div>
-            <div class="pad">
+            <!--div class="pad">
                 <div class="col">
                     <h3>Tailored software</h3>
                     <p class="text">
@@ -119,7 +120,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
         <div class="col center">
             <h2>Demonstration</h2>
@@ -134,8 +135,8 @@
                     <span class="text-glow">Available</span>
                 {/if}
                 {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => gkrlef(1)}>
-                        <span>Check for availability</span>
+                    <button class="{!cfasl ? '' : 'disabled'} big-button coming-soon" on:click={() => gkrlef(1)}>
+                        <span>Coming soon</span>
                     </button>
                 {:else}
                     <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => purchase()}>
@@ -155,6 +156,106 @@
         <div class="ambient-wrapper">
             <div class="ambient">
                 @
+            </div>
+        </div>
+    </div>
+    <div class="secondary-container main-points-section benefits">
+        <div class="section">
+            <h1>Benefits</h1>
+            <div class="base-row main-points-row">
+                <div class="base-col point-pad">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <path d="M177 177H64.0667C49.692 177 42.5046 177 37.0143 174.202C32.1847 171.742 28.2582 167.816 25.7975 162.986C23 157.495 23 150.308 23 135.933V23M125.667 82.8889V142.778M57.2222 108.556V142.778M159.889 40.1111V142.778M91.4444 57.2222V142.778"
+                              stroke="black" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h2>Arbitrage</h2>
+                    <p>
+                        Opportunities found in seconds between 9000+ currencies.
+                    </p>
+                </div>
+                <div class="base-col point-pad">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <path d="M183.333 70.8334C183.333 100.75 159.083 125 129.167 125C127.75 125 126.25 124.917 124.833 124.833C122.75 98.4167 101.583 77.2499 75.1666 75.1666C75.0832 73.7499 75 72.25 75 70.8334C75 40.9167 99.25 16.6667 129.167 16.6667C159.083 16.6667 183.333 40.9167 183.333 70.8334Z"
+                              stroke="#292D32" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M125 129.167C125 159.083 100.75 183.333 70.8333 183.333C40.9166 183.333 16.6666 159.083 16.6666 129.167C16.6666 99.25 40.9166 75 70.8333 75C72.25 75 73.7499 75.0832 75.1665 75.1666C101.583 77.2499 122.75 98.4167 124.833 124.833C124.917 126.25 125 127.75 125 129.167Z"
+                              stroke="#292D32" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M63.5 121.833L70.8333 108.333L78.1667 121.833L91.6667 129.167L78.1667 136.5L70.8333 150L63.5 136.5L50 129.167L63.5 121.833Z"
+                              stroke="#292D32" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h2>Massive data</h2>
+                    <p>
+                        Trading pairs data from 600+ exchanges at your fingertips.
+                    </p>
+                </div>
+                <div class="base-col point-pad">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <path d="M175 100C175 141.422 141.422 175 100 175C58.5787 175 25 141.422 25 100C25 58.5787 58.5787 25 100 25C141.422 25 175 58.5787 175 100Z"
+                              stroke="black" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h2>Easy to use</h2>
+                    <p>
+                        Authenticate, filter and trigger the analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondary-container main-points-section how-to-use">
+        <div class="section">
+            <h1>How to use</h1>
+            <div class="base-row main-points-row">
+                <div class="base-col point-pad">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <path d="M34 70.6666C34 58.5164 43.8498 48.6666 56 48.6666H144C156.151 48.6666 166 58.5164 166 70.6666V129.333C166 141.484 156.151 151.333 144 151.333H56C43.8498 151.333 34 141.484 34 129.333V70.6666Z"
+                              stroke="#e6e6e6" stroke-width="10"/>
+                        <path d="M34 85.3333H166" stroke="#e6e6e6" stroke-width="10"/>
+                        <path d="M114.667 122H136.667" stroke="#e6e6e6" stroke-width="10" stroke-linecap="round"/>
+                    </svg>
+                    <h2>Purchase</h2>
+                    <p>
+                        Purchase private access,
+                        receive software and credentials.
+                    </p>
+                </div>
+                <div class="base-col point-pad">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <path d="M75.0585 149.187C87.2308 156.396 93.3172 160 100 160C106.683 160 112.769 156.396 124.941 149.187L129.059 146.749C141.231 139.541 147.317 135.936 150.659 130C154 124.064 154 116.855 154 102.438M152.888 76C152.396 73.7655 151.685 71.8228 150.659 70C147.317 64.0634 141.231 60.4592 129.059 53.2508L124.941 50.8127C112.769 43.6042 106.683 40 100 40C93.3172 40 87.2308 43.6042 75.0585 50.8127L70.9415 53.2508C58.7692 60.4592 52.683 64.0634 49.3415 70C46 75.9366 46 83.145 46 97.5622V102.438C46 116.855 46 124.064 49.3415 130C50.6996 132.413 52.511 134.44 55 136.481"
+                              stroke="#e6e6e6" stroke-width="10" stroke-linecap="round"/>
+                        <path d="M100 118C109.941 118 118 109.941 118 100C118 90.0589 109.941 82 100 82C90.0589 82 82 90.0589 82 100C82 109.941 90.0589 118 100 118Z"
+                              stroke="#e6e6e6" stroke-width="10"/>
+                    </svg>
+                    <h2>Set up</h2>
+                    <p>
+                        Download the software,
+                        log in with the credentials.
+                    </p>
+                </div>
+                <div class="base-col point-pad">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <g clip-path="url(#clip0_1_5)">
+                            <mask id="mask0_1_5" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                                  width="200" height="200">
+                                <path d="M200 0H0V200H200V0Z" fill="white"/>
+                            </mask>
+                            <g mask="url(#mask0_1_5)">
+                                <path d="M132.397 96.9412C125.8 103.538 100.125 123.346 100.125 123.346M132.397 96.9412C150 79.3382 150 67.6029 150 50C132.397 50 120.662 50 103.059 67.6029M132.397 96.9412L135.185 110.883C137.109 120.502 134.099 130.445 127.162 137.382L120.294 144.25C117.538 147.006 112.909 146.358 111.017 142.95L100.125 123.346M100.125 123.346L76.6544 99.875M103.059 67.6029L76.6544 99.875M103.059 67.6029L89.117 64.8146C79.4982 62.8908 69.5543 65.9016 62.6181 72.8378L55.7505 79.7054C52.994 82.4619 53.6423 87.0906 57.05 88.9835L76.6544 99.875M123.596 76.4073L117.728 82.2749M50.25 149.75L70.1544 145.769C75.6398 144.672 79.5882 139.856 79.5882 134.262V132.147C79.5882 125.666 74.3342 120.412 67.8529 120.412H65.7383C60.1443 120.412 55.328 124.36 54.2309 129.846L50.25 149.75Z"
+                                      stroke="#e6e6e6" stroke-width="10" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </g>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1_5">
+                                <rect width="200" height="200" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h2>Launch</h2>
+                    <p>
+                        Apply needed filters,
+                        trigger the analysis,
+                        find results in seconds.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -345,8 +446,8 @@
                     <span class="spinner"></span>
                 {/if}
                 {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => gkrlef(1)}>
-                        <span>Check for availability</span>
+                    <button class="{!cfasl ? '' : 'disabled'} big-button dark coming-soon" on:click={() => gkrlef(1)}>
+                        <span>Coming soon</span>
                     </button>
                 {:else}
                     <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => purchase()}>
@@ -364,6 +465,79 @@
 </main>
 
 <style>
+
+    .main-points-section.how-to-use {
+        background: linear-gradient(-45deg, #0f1a0f 0%, #0d0d0d 100%);
+        color: var(--slight) !important;
+    }
+
+    .base-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 1920px;
+    }
+
+    .base-col {
+        display: flex;
+        flex-direction: column;
+        max-width: 960px;
+        width: 100%;
+    }
+
+    .section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .how-to-use h1,
+    .benefits h1 {
+        padding-bottom: 40px;
+    }
+
+    .main-points-row {
+        width: 80%;
+        padding: 20px;
+        gap: 40px;
+        color: var(--slight);
+    }
+
+    .point-pad {
+        align-items: center;
+        padding: 20px 40px 80px 40px;
+        background: linear-gradient(-45deg, #0f1a0f 0%, #0d0d0d 100%);
+        filter: grayscale(0.6);
+        outline: hsla(0deg, 0%, 90%, 0.25) 1px solid;
+        border-radius: 8px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
+    }
+
+    .point-pad:hover {
+        filter: grayscale(0);
+        outline: #99ff99 1px solid;
+        box-shadow: 0 0 40px rgba(33, 255, 35, 0.15);
+    }
+
+    .point-pad svg {
+        margin-bottom: 20px;
+    }
+
+    .point-pad path {
+        stroke: var(--slight);
+        transition: all 0.3s ease;
+    }
+
+    .point-pad:hover path {
+        stroke: var(--glow-green);
+        filter: drop-shadow(0 0 10px var(--sglow-green));
+    }
+
+    .point-pad p {
+        text-align: center;
+    }
 
     .spinner-with-button-wrapper {
         display: flex;
@@ -384,13 +558,8 @@
         border-radius: 4px;
     }
 
-    .relative {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .absolute {
-        position: absolute;
+    h3 {
+        font-size: 28px !important;
     }
 
     .ambient-wrapper {
@@ -473,6 +642,7 @@
 
     .back-up-button-wrapper {
         position: sticky;
+        pointer-events: none;
         bottom: 50px;
         width: 100%;
         display: flex;
@@ -481,6 +651,7 @@
     }
 
     .back-up-button {
+        pointer-events: all !important;
         background-color: var(--sdark);
         border-radius: 50%;
         aspect-ratio: 1/1;
@@ -618,7 +789,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 10px;
+        gap: 140px;
         min-height: 100vh;
         padding: 100px 50px;
         color: var(--dark);

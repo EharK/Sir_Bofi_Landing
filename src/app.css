@@ -91,6 +91,10 @@ button:not(.bones):not(.dark):hover {
     border: 1px solid var(--glow-green);
 }
 
+.coming-soon {
+    pointer-events: none;
+}
+
 .disabled {
     opacity: 0.5;
     cursor: unset;
