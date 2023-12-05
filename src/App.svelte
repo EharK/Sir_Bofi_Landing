@@ -161,7 +161,7 @@
     </div>
     <div class="secondary-container main-points-section benefits">
         <div class="section">
-            <h1>Benefits</h1>
+            <h1>What is Sir Bofi</h1>
             <div class="base-row main-points-row">
                 <div class="base-col point-pad">
                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
@@ -202,7 +202,7 @@
     </div>
     <div class="secondary-container main-points-section how-to-use">
         <div class="section">
-            <h1>How to use</h1>
+            <h1>Simple to use</h1>
             <div class="base-row main-points-row">
                 <div class="base-col point-pad">
                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
