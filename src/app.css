@@ -24,6 +24,7 @@ a {
 }
 body, html {
     background-color: var(--slight);
+    overflow-x: hidden;
 }
 
 button {
