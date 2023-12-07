@@ -27,7 +27,7 @@
         return false;
     }
     const purchase = function () {
-        // private_cache
+        window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
         return true;
     }
 
@@ -93,8 +93,8 @@
                         <span class="text-glow">Available</span>
                     {/if}
                     {#if !position_available}
-                        <button class="{!cfasl ? '' : 'disabled'} coming-soon" on:click={() => gkrlef(1)}>
-                            <span>Coming soon</span>
+                        <button class="{!cfasl ? '' : 'disabled'}" on:click={() => gkrlef(1)}>
+                            <span>Check for availability</span>
                         </button>
                     {:else}
                         <button class="{!cfasl ? '' : 'disabled'}" on:click={() => purchase()}>
@@ -135,8 +135,8 @@
                     <span class="text-glow">Available</span>
                 {/if}
                 {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button coming-soon" on:click={() => gkrlef(1)}>
-                        <span>Coming soon</span>
+                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => gkrlef(1)}>
+                        <span>Check for availability</span>
                     </button>
                 {:else}
                     <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => purchase()}>
@@ -244,6 +244,22 @@
                 </div>
             </div>
         </div>
+            <div class="spinner-with-button-wrapper">
+                {#if cfasl}
+                    <span class="spinner"></span>
+                {:else if position_available}
+                    <span class="text-glow">Available</span>
+                {/if}
+                {#if !position_available}
+                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => gkrlef(1)}>
+                        <span>Check for availability</span>
+                    </button>
+                {:else}
+                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => purchase()}>
+                        <span>Purchase account</span>
+                    </button>
+                {/if}
+            </div>
         <hr class="big">
         <div class="section tokenomics-section">
             <h1>$BOFI Tokenomics</h1>
@@ -564,11 +580,11 @@
                                       fill="#02FF00"/>
                             </svg>
                         </div>
-                        <p>Staking | Profit share | Buy Back</p>
+                        <p class="tokenomics-text">Staking | Profit share | Buy Back</p>
                     </div>
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
-                            <h2>Planned utilities</h2>
+                            <h2>Planned Utilities</h2>
                             <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37" viewBox="0 0 44 37"
                                  fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -576,7 +592,7 @@
                                       fill="#02FF00"/>
                             </svg>
                         </div>
-                        <p>Webhosted Platform subscription</p>
+                        <p class="tokenomics-text">Webhosted Platform subscription</p>
                     </div>
                 </div>
             </div>
@@ -667,8 +683,7 @@
                 </ol>
                 <h3>Availability</h3>
                 <p>
-                    I am working on building this application for macOS and Linux but for now it is only available for
-                    Windows. The tech stack of the application is Nuxt, Electron and a classic Node back-end API server.
+                    Both Windows and MacOs versions are available, but before code signing licence is received from Microsoft and MacOs the opening process may be tricky. Windows simple gives a warning to confirm you want to run it and "run anyway" setting might need to be used. MacOs currently does not like an application that has not yet been signed and might not run at current moment.
                 </p>
             </div>
             <!--div id="documentation" class="text-section">
@@ -770,8 +785,8 @@
                     <span class="spinner"></span>
                 {/if}
                 {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button dark coming-soon" on:click={() => gkrlef(1)}>
-                        <span>Coming soon</span>
+                    <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => gkrlef(1)}>
+                        <span>Check for availability</span>
                     </button>
                 {:else}
                     <button class="{!cfasl ? '' : 'disabled'} big-button dark" on:click={() => purchase()}>
@@ -871,7 +886,7 @@
             flex-direction: column;
         }
 
-        h1, h2, h3 {
+        .main-points-section h1, h2, h3 {
             text-align: center !important;
         }
 
@@ -904,7 +919,7 @@
             width: 24px;
         }
 
-        p {
+        p.tokenomics-text {
             text-align: center !important;
         }
 
