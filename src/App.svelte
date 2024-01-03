@@ -105,18 +105,28 @@
             </div>
             <!--div class="pad">
                 <div class="col">
-                    <h3>Tailored software</h3>
+                    <h3>Hands-on <span class="hl">Demo Release</span></h3>
                     <p class="text">
-                        Reach out to me in case you have a tailored version of this software in mind!
-                    </p>
-                    <p class="text">
-                        <span class="hl">Starting from 2499€.</span>
+                        Demo release of The Sir Bofi platform is completed, compiled, signed, and released with official
+                        EV Code Signing Certificate.
                     </p>
                 </div>
                 <div class="col">
                     <div class="buttons-wrapper">
                         <button>
-                            <a href="mailto:sirbofi@gmail.com">Contact</a>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="16px" height="16px" viewBox="0 0 15 15"
+                                 fill="#f2f2f2" class="button-svg">
+                            <path d="M14.8143 0.111171C14.9318 0.206099 15 0.349008 15 0.500004V7H7V1.5958L14.3952 0.0111032C14.5429 -0.0205349 14.6969 0.0162435 14.8143 0.111171Z"
+                                  fill="#f2f2f2"/>
+                            <path d="M6 1.81008L0.395235 3.0111C0.1647 3.0605 0 3.26424 0 3.5V7H6V1.81008Z"
+                                  fill="#f2f2f2"/>
+                            <path d="M0 8V12.5C0 12.7488 0.182965 12.9598 0.429289 12.995L6 13.7908V8H0Z"
+                                  fill="#f2f2f2"/>
+                            <path d="M7 13.9337L14.4293 14.995C14.5728 15.0155 14.7181 14.9727 14.8276 14.8777C14.9371 14.7828 15 14.645 15 14.5V8H7V13.9337Z"
+                                  fill="#f2f2f2"/>
+                        </svg>
+                            <a href="/dist/Sir_Bofi 0.6.0.exe" download="Sir_Bofi_Demo_Portable.exe">Download</a>
                         </button>
                     </div>
                 </div>
@@ -244,22 +254,22 @@
                 </div>
             </div>
         </div>
-            <div class="spinner-with-button-wrapper">
-                {#if cfasl}
-                    <span class="spinner"></span>
-                {:else if position_available}
-                    <span class="text-glow">Available</span>
-                {/if}
-                {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => gkrlef(1)}>
-                        <span>Check for availability</span>
-                    </button>
-                {:else}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => purchase()}>
-                        <span>Purchase account</span>
-                    </button>
-                {/if}
-            </div>
+        <div class="spinner-with-button-wrapper">
+            {#if cfasl}
+                <span class="spinner"></span>
+            {:else if position_available}
+                <span class="text-glow">Available</span>
+            {/if}
+            {#if !position_available}
+                <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => gkrlef(1)}>
+                    <span>Check for availability</span>
+                </button>
+            {:else}
+                <button class="{!cfasl ? '' : 'disabled'} big-button" on:click={() => purchase()}>
+                    <span>Purchase account</span>
+                </button>
+            {/if}
+        </div>
         <hr class="big">
         <div class="section tokenomics-section">
             <h1>$BOFI Tokenomics</h1>
@@ -573,7 +583,8 @@
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
                             <h2>Initial Utilities</h2>
-                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37" viewBox="0 0 44 37"
+                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37"
+                                 viewBox="0 0 44 37"
                                  fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M23.1687 0.903087C24.3682 -0.301029 26.3129 -0.301029 27.5124 0.903087L42.8695 16.3198C44.069 17.5239 44.069 19.4761 42.8695 20.6802L27.5124 36.0969C26.3129 37.301 24.3682 37.301 23.1687 36.0969C21.9692 34.8928 21.9692 32.9405 23.1687 31.7364L33.2826 21.5833H3.84053C2.14423 21.5833 0.769104 20.2029 0.769104 18.5C0.769104 16.7971 2.14423 15.4167 3.84053 15.4167H33.2826L23.1687 5.26358C21.9692 4.05946 21.9692 2.1072 23.1687 0.903087Z"
@@ -585,7 +596,8 @@
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
                             <h2>Planned Utilities</h2>
-                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37" viewBox="0 0 44 37"
+                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37"
+                                 viewBox="0 0 44 37"
                                  fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M23.1687 0.903087C24.3682 -0.301029 26.3129 -0.301029 27.5124 0.903087L42.8695 16.3198C44.069 17.5239 44.069 19.4761 42.8695 20.6802L27.5124 36.0969C26.3129 37.301 24.3682 37.301 23.1687 36.0969C21.9692 34.8928 21.9692 32.9405 23.1687 31.7364L33.2826 21.5833H3.84053C2.14423 21.5833 0.769104 20.2029 0.769104 18.5C0.769104 16.7971 2.14423 15.4167 3.84053 15.4167H33.2826L23.1687 5.26358C21.9692 4.05946 21.9692 2.1072 23.1687 0.903087Z"
@@ -683,7 +695,10 @@
                 </ol>
                 <h3>Availability</h3>
                 <p>
-                    Both Windows and MacOs versions are available, but before code signing licence is received from Microsoft and MacOs the opening process may be tricky. Windows simple gives a warning to confirm you want to run it and "run anyway" setting might need to be used. MacOs currently does not like an application that has not yet been signed and might not run at current moment.
+                    Both Windows and MacOs versions are available, but before code signing licence is received from
+                    Microsoft and MacOs the opening process may be tricky. Windows simple gives a warning to confirm you
+                    want to run it and "run anyway" setting might need to be used. MacOs currently does not like an
+                    application that has not yet been signed and might not run at current moment.
                 </p>
             </div>
             <!--div id="documentation" class="text-section">
@@ -821,13 +836,17 @@
             </svg>
             Telegram
         </a>
-        <p class="xs-text">
-            © 2023 RumVessel. All rights reserved.
+        <p class="xs-text"><a href="/dist/Sir_Bofi 0.6.0.exe" download="Sir_Bofi_Demo_Portable.exe">
+            © 2023 RumVessel. All rights reserved.</a>
         </p>
     </div>
 </main>
 
 <style>
+
+    .button-svg {
+        margin-right: 4px;
+    }
 
     .xs-text {
         font-size: 12px;
