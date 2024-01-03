@@ -103,7 +103,7 @@
                     {/if}
                 </div>
             </div>
-            <!--div class="pad">
+            <div class="pad">
                 <div class="col">
                     <h3>Hands-on <span class="hl">Demo Release</span></h3>
                     <p class="text">
@@ -130,7 +130,7 @@
                         </button>
                     </div>
                 </div>
-            </div-->
+            </div>
         </div>
         <div class="col center">
             <h2>Demonstration</h2>
@@ -604,7 +604,7 @@
                                       fill="#02FF00"/>
                             </svg>
                         </div>
-                        <p class="tokenomics-text">Webhosted Platform subscription</p>
+                        <p class="tokenomics-text">Web-hosted Platform Token-gated access</p>
                     </div>
                 </div>
             </div>
@@ -634,21 +634,9 @@
                 <h2>Before using the platform!</h2>
                 <h3>Your safety</h3>
                 <p>
-                    The process of requiring code-signing certificates from Microsoft and Apple is ongoing and dependent
-                    on their slow behaviour.
-                    For that reason you might receive a warning from your operating system that the application
-                    is suspicious. <span class="hl">I completely understand this sounds concerning :D BUT </span> - it
-                    is
-                    what Apple and Microsoft do to applications that are simply not signed by their (not easily
-                    acquirable) certificates.
-                    Feel free to run the application through any antivirus software or test it any other
-                    way you like. What I can do is provide you with the results from <span class="hl">VirusTotal</span>
-                    - a platform that checks the application with 50+ antivirus software.
-
-                    <span class="hl">You can
-                    check the results <a
-                                href="https://www.virustotal.com/gui/file/38afa7d0826366889091850ac31d7f10350304533d374be6c179b0b340924d82/detection"
-                                class="inline" target="_blank">here.</a></span>
+                    We have successfully acquired the Microsoft Windows EV Code Signing Certificate and we have
+                    signed the application with it. This proves that the application is from a <span class="hl">known
+                    and trusted publisher!</span>
                 </p>
                 <h3>Crucial to know</h3>
                 <p>
@@ -695,79 +683,13 @@
                 </ol>
                 <h3>Availability</h3>
                 <p>
-                    Both Windows and MacOs versions are available, but before code signing licence is received from
-                    Microsoft and MacOs the opening process may be tricky. Windows simple gives a warning to confirm you
-                    want to run it and "run anyway" setting might need to be used. MacOs currently does not like an
-                    application that has not yet been signed and might not run at current moment.
+                    Windows portable executable version of the application is <span class="hl">signed and available for
+                    download</span> - Demo version on this very webpage and the premium version after purchasing an
+                    account. MacOS version is currently not available due to the inexistent collaboration from
+                    Apple’s side on even successfully beginning the validation process of applying for the Code
+                    Signing certificate for their operating systems.
                 </p>
             </div>
-            <!--div id="documentation" class="text-section">
-                <h2>Documentation</h2>
-                <h3>Logic</h3>
-                <p>
-                    Platform scrapes 9000+ cryptos, 600+ exchanges and hundreds of trading pairs per crypto, goes over
-                    <span class="hl">every possible price difference combination</span>, calculates price differences
-                    and provides those as
-                    arbitrage opportunities <span class="hl">with corresponding market links attached.</span>
-                </p>
-                <h3>Basic filters</h3>
-                <ol>
-                    <li>
-                        <p>
-                            <span class="bold">Start analyzing from </span> - Pulled cryptos are ordered by their
-                            market cap. As BTC has the biggest market cap in the market it is the first to be checked.
-                            Based on that you can choose from what rank (ordered by market cap) to start checking from.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span class="bold">Number of cryptos to check</span> - Taking into account the previous
-                            filter - how many cryptos to scan from that point on.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span class="bold">Market pairs check offset</span> - In case there is a crypto with a a lot
-                            of trading pairs and exchanges related you might need to execute multiple scans going
-                            through different ranges of the market pairs.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span class="bold">Minimum/maximum profit margin</span> - this is an option to filter out
-                            illogical arbitrage opportunities. For example if you do not filter the results to be from
-                            trustworthy exchanges and with specifications that make the arbitrage possible it can return
-                            results with unrealistically high profit margins.
-                        </p>
-                    </li>
-                </ol>
-                <h3>Advanced filters</h3>
-                <ol>
-                    <li>
-                        <p>
-                            <span class="bold">Trading categories </span> - You can choose to filter out either spot
-                            trading or perpetual trading categories. Not sure why you’d need both but I left it open as
-                            an option :D.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span class="bold">Quote symbols</span> - This filters out what kind of price quote
-                            currencies to accept into the arbitrage trading pairs. For example if the algorithm is
-                            analysing BTC and only USD quote symbol is selected then it will only compare BTC/USD
-                            trading pair prices.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span class="bold">Exchanges</span> - This is one of the most important filters. If this
-                            filter is disabled the all 600+ exchanges are analysed - many of them are not trustworthy.
-                            The ones listed in the filters should be trustworthy though as they have minimum 4/5 ratings
-                            on their apps and an appropriate amount of downloads.
-                        </p>
-                    </li>
-                </ol>
-            </div-->
             <div class="text-section">
                 <h2><span class="hl">Claiming process</span></h2>
                 <p>
@@ -836,8 +758,8 @@
             </svg>
             Telegram
         </a>
-        <p class="xs-text"><a href="/dist/Sir_Bofi 0.6.0.exe" download="Sir_Bofi_Demo_Portable.exe">
-            © 2023 RumVessel. All rights reserved.</a>
+        <p class="xs-text">
+            © 2023 RumVessel. All rights reserved.
         </p>
     </div>
 </main>
