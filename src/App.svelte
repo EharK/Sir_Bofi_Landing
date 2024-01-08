@@ -30,7 +30,6 @@
         window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
         return true;
     }
-
     const typeWriterIterator = function (str) {
         let i = 0;
         const speed = 50;
@@ -45,9 +44,7 @@
             }
         }, speed);
     }
-
     const caveman_title_last_word_variants = ["opportunities", "changes", "potential"]
-
     const wordIterator = function (i) {
         const speed = 4000;
         const list_len = caveman_title_last_word_variants.length;
@@ -58,9 +55,12 @@
             i === list_len - 1 ? wordIterator(0) : wordIterator(i + 1);
         }, speed);
     }
-
     wordIterator(0);
 </script>
+
+<svelte:head>
+
+</svelte:head>
 
 <main>
     <div id="landing" class="primary-container">
@@ -117,15 +117,15 @@
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  width="16px" height="16px" viewBox="0 0 15 15"
                                  fill="#f2f2f2" class="button-svg">
-                            <path d="M14.8143 0.111171C14.9318 0.206099 15 0.349008 15 0.500004V7H7V1.5958L14.3952 0.0111032C14.5429 -0.0205349 14.6969 0.0162435 14.8143 0.111171Z"
-                                  fill="#f2f2f2"/>
-                            <path d="M6 1.81008L0.395235 3.0111C0.1647 3.0605 0 3.26424 0 3.5V7H6V1.81008Z"
-                                  fill="#f2f2f2"/>
-                            <path d="M0 8V12.5C0 12.7488 0.182965 12.9598 0.429289 12.995L6 13.7908V8H0Z"
-                                  fill="#f2f2f2"/>
-                            <path d="M7 13.9337L14.4293 14.995C14.5728 15.0155 14.7181 14.9727 14.8276 14.8777C14.9371 14.7828 15 14.645 15 14.5V8H7V13.9337Z"
-                                  fill="#f2f2f2"/>
-                        </svg>
+                                <path d="M14.8143 0.111171C14.9318 0.206099 15 0.349008 15 0.500004V7H7V1.5958L14.3952 0.0111032C14.5429 -0.0205349 14.6969 0.0162435 14.8143 0.111171Z"
+                                      fill="#f2f2f2"/>
+                                <path d="M6 1.81008L0.395235 3.0111C0.1647 3.0605 0 3.26424 0 3.5V7H6V1.81008Z"
+                                      fill="#f2f2f2"/>
+                                <path d="M0 8V12.5C0 12.7488 0.182965 12.9598 0.429289 12.995L6 13.7908V8H0Z"
+                                      fill="#f2f2f2"/>
+                                <path d="M7 13.9337L14.4293 14.995C14.5728 15.0155 14.7181 14.9727 14.8276 14.8777C14.9371 14.7828 15 14.645 15 14.5V8H7V13.9337Z"
+                                      fill="#f2f2f2"/>
+                            </svg>
                             <a href="/dist/Sir_Bofi 0.6.0.exe" download="Sir_Bofi_Demo_Portable.exe">Download</a>
                         </button>
                     </div>
