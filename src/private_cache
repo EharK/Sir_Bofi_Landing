@@ -1,0 +1,4 @@
+
+    const purchase = function () {
+        window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
+    }
