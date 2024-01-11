@@ -1,14 +1,16 @@
 <script>
+    import {onMount} from 'svelte';
 
-    // add gtm body tag content
-    const body_element = document.getElementsByTagName('body')[0];
-    const gtm_body_tag_content = `<!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T38BF9D4"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
-        `;
-    // add gtm body tag content as first element in body element
-    body_element.insertAdjacentHTML('afterbegin', gtm_body_tag_content);
+    let gtmId = 'GTM-T38BF9D4';
+    function setUpScript() {
+        let gtmScript = document.createElement("script");
+        gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}&l=dataLayer`;
+        document.head.append(gtmScript);
+    }
+
+    onMount(() => {
+        setUpScript();
+    });
 
     let cfasl = false;
     let position_available = false;
@@ -68,9 +70,6 @@
     }
     wordIterator(0);
 </script>
-
-<svelte:head>
-</svelte:head>
 
 <main>
     <div id="landing" class="primary-container">
