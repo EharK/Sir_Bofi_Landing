@@ -4,12 +4,24 @@
     let gtmId = 'GTM-T38BF9D4';
     function setUpScript() {
         let gtmScript = document.createElement("script");
-        gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}&l=dataLayer`;
+        gtmScript.src = `https://www.googletagmanager.com/gtag/js?id=${gtmId}`;
         document.head.append(gtmScript);
+    }
+
+    function setUpGTM() {
+        // @ts-ignore
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            // @ts-ignore
+            window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', gtmId);
     }
 
     onMount(() => {
         setUpScript();
+        setUpGTM();
     });
 
     let cfasl = false;
