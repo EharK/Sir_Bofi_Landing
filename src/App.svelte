@@ -1323,6 +1323,10 @@
             max-width: 100%;
         }
 
+        .buttons-wrapper {
+            justify-content: center;
+        }
+
         .primary-container-content-wrapper {
             justify-content: center;
             text-align: center;
