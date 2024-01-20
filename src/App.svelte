@@ -173,6 +173,7 @@
             <div class="buttons-wrapper">
                 <a href="Sir_Bofi0.6.0.exe" download>
                     <button class="big-button transparent">
+                        <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
                         <span>Download free demo version</span>
                     </button>
                 </a>
@@ -256,6 +257,7 @@
         <div class="buttons-wrapper">
             <a href="Sir_Bofi0.6.0.exe" download>
                 <button class="big-button transparent">
+                        <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
                     <span>Download free demo version</span>
                 </button>
             </a>

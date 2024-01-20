@@ -116,7 +116,7 @@ button.round {
 }
 button:active {
     opacity: 0.8;
-    cursor: unset;
+    cursor: default;
 }
 
 .coming-soon {
