@@ -26,7 +26,7 @@ a {
 body, html {
     background-color: var(--slight);
     overflow-x: hidden;
-    scroll-padding-top: 200px;
+    scroll-padding-top: 150px;
 }
 
 .absolute {
