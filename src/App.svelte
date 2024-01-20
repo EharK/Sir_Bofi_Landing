@@ -132,26 +132,28 @@
                 <h1 class="xxl">
                     Global crypto price differences in <span class="hl green">seconds</span>
                 </h1>
-                <div class="spinner-with-button-wrapper">
+                <div class="buttons-wrapper">
                     <a href="#demonstration">
                         <button class="big-button transparent">
                             What is this?
                         </button>
                     </a>
-                    {#if !position_available}
-                        <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => gkrlef(1)}>
-                            <span>Give me access</span>
-                        </button>
-                    {:else}
-                        <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => purchase()}>
-                            <span>Purchase account</span>
-                        </button>
-                    {/if}
-                    {#if cfasl}
-                        <span class="spinner"></span>
-                    {:else if position_available}
-                        <span class="text-glow">Available</span>
-                    {/if}
+                    <div class="spinner-with-button-wrapper">
+                        {#if !position_available}
+                            <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => gkrlef(1)}>
+                                <span>Give me access</span>
+                            </button>
+                        {:else}
+                            <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => purchase()}>
+                                <span>Purchase account</span>
+                            </button>
+                        {/if}
+                        {#if cfasl}
+                            <span class="spinner"></span>
+                        {:else if position_available}
+                            <span class="text-glow">Available</span>
+                        {/if}
+                    </div>
                 </div>
             </div>
         </div>
@@ -692,6 +694,17 @@
 
 <style>
 
+    .buttons-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .buttons-wrapper div {
+        margin: 0;
+    }
+
     .hl {
         background-color: var(--highlight);
         border-radius: 4px;
@@ -719,6 +732,8 @@
     h1.xxl {
         font-size: clamp(24px, 5vw, 80px) !important;
         font-weight: 700;
+        margin-bottom: 0;
+        margin-top: 20px;
     }
 
     h2 {
@@ -1306,6 +1321,20 @@
 
         video {
             max-width: 100%;
+        }
+
+        .primary-container-content-wrapper {
+            justify-content: center;
+            text-align: center;
+        }
+
+        .landing-title-container {
+            margin: 0 0 100px 0;
+        }
+
+        .spinner-with-button-wrapper {
+            flex-direction: column;
+            justify-content: center;
         }
 
         .secondary-container {

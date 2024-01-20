@@ -21,6 +21,7 @@
 a {
     text-decoration: none;
     color: unset;
+    width: fit-content;
 }
 body, html {
     background-color: var(--slight);
