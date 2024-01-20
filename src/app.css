@@ -4,7 +4,7 @@
     --slight: #e6e6e6;
     --sdark: #333333;
     --dark: #1a1a1a;
-    --highlight: rgba(255, 230, 128, 0.45);
+    --highlight: rgba(255, 230, 128, 0.4);
     --ghighlight: rgba(92, 230, 205, 0.3);
     --glow-green: #00ff00;
     --sglow-green: #006600;
@@ -25,6 +25,15 @@ a {
 body, html {
     background-color: var(--slight);
     overflow-x: hidden;
+    scroll-padding-top: 200px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
 }
 
 button {
@@ -35,32 +44,48 @@ button {
     color: var(--light);
     border-radius: 8px;
     padding: 8px 24px;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
     user-select: none;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 16px;
+    font-size: clamp(12px, 1.5vw, 16px);
     width: max-content;
+    white-space: nowrap;
+}
+button:hover {
+    transform: translateY(-2px);
 }
 button.big-button {
     padding: 16px 32px;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
 }
+
+button.transparent {
+    background-color: transparent;
+    color: var(--light);
+}
+button.transparent:hover {
+    background-color: var(--light-green);
+    border: 1px solid var(--glow-green);
+}
+
 button.dark {
     background-color: var(--sdark);
     color: var(--light);
 }
-
 button.dark:hover {
     background-color: var(--dark) !important;
     color: var(--light) !important;
 }
 
-button.with-bottom-icon {
-    flex-direction: column;
-    gap: 0;
+button.colored {
+    background-color: var(--glow-green);
+    color: var(--dark);
 }
+button.colored:hover {
+}
+
 button.light {
     background-color: var(--light);
     color: var(--dark);
@@ -68,6 +93,11 @@ button.light {
 button.light:hover {
     background-color: var(--slight) !important;
     color: var(--sdark) !important;
+}
+
+button.with-bottom-icon {
+    flex-direction: column;
+    gap: 0;
 }
 button.bones {
     padding: 0;
@@ -86,10 +116,6 @@ button.round {
 button:active {
     opacity: 0.8;
     cursor: unset;
-}
-button:not(.bones):not(.dark):hover {
-    background-color: var(--light-green);
-    border: 1px solid var(--glow-green);
 }
 
 .coming-soon {
