@@ -969,7 +969,7 @@
         box-sizing: border-box;
         flex-direction: column;
         justify-content: center;
-        background: url("../public/blurred.png") fixed;
+        background: url("/blurred.png") fixed;
         background-size: cover;
         z-index: 10;
     }
