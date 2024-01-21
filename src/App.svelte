@@ -2,13 +2,11 @@
     import {onMount} from 'svelte';
 
     let gtmId = 'GTM-T38BF9D4';
-
     function setUpScript() {
         let gtmScript = document.createElement("script");
         gtmScript.src = `https://www.googletagmanager.com/gtag/js?id=${gtmId}`;
         document.head.append(gtmScript);
     }
-
     function setUpGTM() {
         // @ts-ignore
         window.dataLayer = window.dataLayer || [];
@@ -21,7 +19,6 @@
         gtag('js', new Date());
         gtag('config', gtmId);
     }
-
     onMount(() => {
         setUpScript();
         setUpGTM();
@@ -58,36 +55,20 @@
         window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
         return true;
     }
-    const typeWriterIterator = function (str) {
-        let i = 0;
-        const speed = 50;
-        const str_length = str.length;
-
-        const typeWriterInterval = setInterval(() => {
-            if (i < str.length) {
-                caveman_title_iterable_part += str.charAt(i);
-                i++;
-            } else {
-                clearInterval(typeWriterInterval);
-            }
-        }, speed);
-    }
-    const caveman_title_last_word_variants = ["opportunities", "changes", "potential"]
-    const wordIterator = function (i) {
-        const speed = 4000;
-        const list_len = caveman_title_last_word_variants.length;
-        let word = caveman_title_last_word_variants[i];
-        caveman_title_iterable_part = word.charAt(0);
-        typeWriterIterator(word.slice(1));
-        setTimeout(() => {
-            i === list_len - 1 ? wordIterator(0) : wordIterator(i + 1);
-        }, speed);
-    }
-    wordIterator(0);
 
     let phoneNavActive = false;
     const togglePhoneNavMenu = function () {
         phoneNavActive = !phoneNavActive;
+    }
+
+    let downloadStarted = false;
+    const showLoadingUntilDownloadStarted = function () {
+        if (!downloadStarted) {
+            downloadStarted = true;
+            setTimeout(() => {
+                downloadStarted = false;
+            }, 2000);
+        }
     }
 </script>
 
@@ -171,9 +152,13 @@
                 <track kind="captions" default src="">
             </video>
             <div class="buttons-wrapper">
-                <a href="Sir_Bofi0.6.0.exe" download>
+                <a href="Sir_Bofi0.6.0.exe" download on:click={showLoadingUntilDownloadStarted}>
                     <button class="big-button transparent">
-                        <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
+                        {#if downloadStarted}
+                            <span class="spinner"></span>
+                        {:else}
+                            <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
+                        {/if}
                         <span>Download free demo version</span>
                     </button>
                 </a>
@@ -255,7 +240,7 @@
             </div>
         </div>
         <div class="buttons-wrapper">
-            <a href="Sir_Bofi0.6.0.exe" download>
+            <a href="Sir_Bofi0.6.0.exe" download on:click={showLoadingUntilDownloadStarted}>
                 <button class="big-button transparent">
                         <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
                     <span>Download free demo version</span>
