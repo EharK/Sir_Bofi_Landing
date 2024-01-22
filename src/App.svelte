@@ -157,7 +157,7 @@
                         {#if downloadStarted}
                             <span class="spinner"></span>
                         {:else}
-                            <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
+                            <img class="windows_download_button_logo" src="windows_logo.svg" alt="">
                         {/if}
                         <span>Download free demo version</span>
                     </button>
@@ -242,7 +242,7 @@
         <div class="buttons-wrapper">
             <a href="Sir_Bofi0.6.0.exe" download on:click={showLoadingUntilDownloadStarted}>
                 <button class="big-button transparent">
-                        <img src="windows_logo.svg" width="14px" height="14px" style="margin-right: 8px" alt="">
+                        <img class="windows_download_button_logo" src="windows_logo.svg" alt="">
                     <span>Download free demo version</span>
                 </button>
             </a>
@@ -799,6 +799,11 @@
         text-align: center;
     }
 
+    .windows_download_button_logo {
+        aspect-ratio: 1/1;
+        height: 12px;
+    }
+
     .spinner-with-button-wrapper {
         display: flex;
         flex-direction: row;
@@ -1037,6 +1042,7 @@
         .spinner-with-button-wrapper {
             flex-direction: column;
             justify-content: center;
+            max-height: min-content;
         }
 
         .secondary-container {
