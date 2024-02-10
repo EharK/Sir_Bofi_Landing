@@ -111,12 +111,12 @@
         <div class="primary-container-content-wrapper">
             <div class="landing-title-container">
                 <h1 class="xxl">
-                    Global crypto price differences in <span class="hl green">seconds</span>
+                    Find crypto arbitrage possibilities in <span class="hl green">seconds</span>
                 </h1>
                 <div class="buttons-wrapper">
                     <a href="#demonstration">
                         <button class="big-button transparent">
-                            What is this?
+                            What is it?
                         </button>
                     </a>
                     <div class="spinner-with-button-wrapper">
@@ -262,7 +262,7 @@
         <div id="tokenomics" class="section tokenomics-section">
             <h1>$BOFI Tokenomics</h1>
             <div class="base-row tokenomics-row">
-                <img src="tokenomics.svg" alt="">
+                <img class="tokenomics-chart" src="tokenomics.svg" alt="">
                 <div class="base-col token-utilities-wrapper">
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
@@ -852,9 +852,9 @@
     }
 
     .tokenomics-chart {
-        width: 100%;
         margin-right: 24px;
         flex: 3;
+        min-width: 0;
     }
 
     @media screen and (max-width: 1280px) {
@@ -912,7 +912,8 @@
         }
 
         .tokenomics-chart {
-            max-width: 500px;
+            max-width: calc(100% - 24px);
+            margin: 0;
         }
 
         .base-row.main-points-row {
@@ -1031,6 +1032,7 @@
         .spinner-with-button-wrapper {
             flex-direction: column;
             justify-content: center;
+            max-height: min-content;
         }
 
         .secondary-container {
