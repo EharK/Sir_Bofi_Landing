@@ -152,32 +152,27 @@
                 <track kind="captions" default src="">
             </video>
             <div class="buttons-wrapper">
-                <a href="Sir_Bofi0.6.0.exe" download on:click={showLoadingUntilDownloadStarted}>
-                    <button class="big-button transparent">
-                        {#if downloadStarted}
-                            <span class="spinner"></span>
-                        {:else}
-                            <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
-                        {/if}
-                        <span>Download free demo version</span>
-                    </button>
-                </a>
                 <div class="spinner-with-button-wrapper">
-                    {#if !position_available}
-                        <button class="{!cfasl ? '' : 'disabled'}  colored big-button" on:click={() => gkrlef(1)}>
-                            <span>Give me access</span>
-                        </button>
-                    {:else}
-                        <button class="{!cfasl ? '' : 'disabled'} colored big-button" on:click={() => purchase()}>
-                            <span>Purchase account</span>
-                        </button>
-                    {/if}
                     {#if cfasl}
                         <span class="spinner"></span>
                     {:else if position_available}
                         <span class="text-glow">Available</span>
                     {/if}
+                    {#if !position_available}
+                        <button class="{!cfasl ? '' : 'disabled'} big-button transparent" on:click={() => gkrlef(1)}>
+                            <span>Give me access</span>
+                        </button>
+                    {:else}
+                        <button class="{!cfasl ? '' : 'disabled'} big-button transparent" on:click={() => purchase()}>
+                            <span>Purchase account</span>
+                        </button>
+                    {/if}
                 </div>
+                <a href="https://demo.sirbofi.com/">
+                    <button class="big-button colored">
+                        <span>Try free demo app online</span>
+                    </button>
+                </a>
             </div>
         </div>
     </div>
@@ -240,10 +235,9 @@
             </div>
         </div>
         <div class="buttons-wrapper">
-            <a href="Sir_Bofi0.6.0.exe" download on:click={showLoadingUntilDownloadStarted}>
-                <button class="big-button transparent">
-                        <img src="windows_logo.svg" width="24px" height="24px" style="margin-right: 8px" alt="">
-                    <span>Download free demo version</span>
+            <a href="https://demo.sirbofi.com/">
+                <button class="big-button colored">
+                    <span>Try free demo app online</span>
                 </button>
             </a>
             <div class="spinner-with-button-wrapper">
@@ -326,7 +320,8 @@
                 <h3>Availability</h3>
                 <p>
                     Windows portable executable version of the application is <span class="hl">signed and available for
-                    download</span> - Demo version on this very webpage and the premium version after purchasing an
+                    download</span> - You can try out <a class="inline" href="https://demo.sirbofi.com">free demo
+                    application online</a> and the premium version after purchasing an
                     account. MacOS version is currently not available due to the inexistent collaboration from
                     Apple’s side on even successfully beginning the validation process of applying for the Code
                     Signing certificate for their operating systems.
