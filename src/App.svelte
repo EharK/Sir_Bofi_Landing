@@ -119,7 +119,12 @@
                             What is it?
                         </button>
                     </a>
-                    <div class="spinner-with-button-wrapper">
+                    <a href="https://demo.sirbofi.com/">
+                        <button class="big-button colored">
+                            <span>TRY DEMO NOW</span>
+                        </button>
+                    </a>
+                    <!--div class="spinner-with-button-wrapper">
                         {#if !position_available}
                             <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => gkrlef(1)}>
                                 <span>Give me access</span>
@@ -134,7 +139,7 @@
                         {:else if position_available}
                             <span class="text-glow">Available</span>
                         {/if}
-                    </div>
+                    </div-->
                 </div>
             </div>
         </div>
