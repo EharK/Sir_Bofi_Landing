@@ -1,111 +1,6 @@
-<script>
-    import {onMount} from 'svelte';
-
-    let gtmId = 'GTM-T38BF9D4';
-    function setUpScript() {
-        let gtmScript = document.createElement("script");
-        gtmScript.src = `https://www.googletagmanager.com/gtag/js?id=${gtmId}`;
-        document.head.append(gtmScript);
-    }
-    function setUpGTM() {
-        // @ts-ignore
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            // @ts-ignore
-            window.dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', gtmId);
-    }
-    onMount(() => {
-        setUpScript();
-        setUpGTM();
-    });
-
-    let cfasl = false;
-    let position_available = false;
-    let ll = false;
-    let caveman_title = "Private market overview tool to uncover "
-    let caveman_title_iterable_part = "opportunities";
-    const gkrlef = function (uid) {
-        cfasl = true;
-        let xhr = new XMLHttpRequest();
-        if (ll && cfasl) {
-            xhr.open("POST", "https://srbfi.com/cfa", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    let response = JSON.parse(xhr.responseText);
-                    if (response.status === "success") {
-                        return true;
-                    }
-                }
-            }
-            xhr.send(JSON.stringify({uid: uid}));
-        }
-        setTimeout(() => {
-            cfasl = false;
-            position_available = true;
-        }, Math.floor(Math.random() * 2000) + 500);
-        return false;
-    }
-    const purchase = function () {
-        window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
-        return true;
-    }
-
-    let phoneNavActive = false;
-    const togglePhoneNavMenu = function () {
-        phoneNavActive = !phoneNavActive;
-    }
-
-    let downloadStarted = false;
-    const showLoadingUntilDownloadStarted = function () {
-        if (!downloadStarted) {
-            downloadStarted = true;
-            setTimeout(() => {
-                downloadStarted = false;
-            }, 2000);
-        }
-    }
-</script>
-
 <main>
     <div class="overlay-items-container">
-        <div class="top-bar">
-            <div class="relative">
-                <a href="/" class="absolute logo navbar">
-                    <img class="" src="sir_bofi.svg" alt="Sir Bofi logo">
-                    Sir Bofi
-                </a>
-            </div>
-            <div class="nav">
-                <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
-                    <a href="#landing">
-                        <button class="bones">Home</button>
-                    </a>
-                    <a href="#demonstration">
-                        <button class="bones">Demo</button>
-                    </a>
-                    <a href="#101">
-                        <button class="bones">About</button>
-                    </a>
-                    <a href="#tokenomics">
-                        <button class="bones">Tokenomics</button>
-                    </a>
-                    <a href="#readme">
-                        <button class="bones">Overview</button>
-                    </a>
-                </div>
-            </div>
-            <div class="burger"
-                 on:click={togglePhoneNavMenu} on:keydown={()=>{}}
-                 role="button" tabindex="0">
-                <img src="burger.svg" alt="">
-            </div>
-        </div>
+        <TopBar {phoneNavActive} {togglePhoneNavMenu}/>
     </div>
     <div id="landing" class="primary-container">
         <div class="primary-container-content-wrapper">
@@ -119,28 +14,15 @@
                             What is it?
                         </button>
                     </a>
-                    <a href="https://demo.sirbofi.com/">
+                    <a href="https://demo.sirbofi.com/" target="_blank">
                         <button class="big-button colored">
                             <span>TRY DEMO NOW</span>
                         </button>
                     </a>
-                    <!--div class="spinner-with-button-wrapper">
-                        {#if !position_available}
-                            <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => gkrlef(1)}>
-                                <span>Give me access</span>
-                            </button>
-                        {:else}
-                            <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => purchase()}>
-                                <span>Purchase account</span>
-                            </button>
-                        {/if}
-                        {#if cfasl}
-                            <span class="spinner"></span>
-                        {:else if position_available}
-                            <span class="text-glow">Available</span>
-                        {/if}
-                    </div-->
                 </div>
+            </div>
+            <div class="landing-fidget-container">
+                <Director/>
             </div>
         </div>
         <div class="ambient-wrapper">
@@ -157,23 +39,8 @@
                 <track kind="captions" default src="">
             </video>
             <div class="buttons-wrapper">
-                <div class="spinner-with-button-wrapper">
-                    {#if cfasl}
-                        <span class="spinner"></span>
-                    {:else if position_available}
-                        <span class="text-glow">Available</span>
-                    {/if}
-                    {#if !position_available}
-                        <button class="{!cfasl ? '' : 'disabled'} big-button transparent" on:click={() => gkrlef(1)}>
-                            <span>Give me access</span>
-                        </button>
-                    {:else}
-                        <button class="{!cfasl ? '' : 'disabled'} big-button transparent" on:click={() => purchase()}>
-                            <span>Purchase account</span>
-                        </button>
-                    {/if}
-                </div>
-                <a href="https://demo.sirbofi.com/">
+                <PurchaseCta {position_available} {cfasl} {gkrlef} {purchase}/>
+                <a href="https://demo.sirbofi.com/" target="_blank">
                     <button class="big-button colored">
                         <span>Try free demo app online</span>
                     </button>
@@ -240,26 +107,16 @@
             </div>
         </div>
         <div class="buttons-wrapper">
-            <a href="https://demo.sirbofi.com/">
+            <a href="https://demo.sirbofi.com/" target="_blank">
                 <button class="big-button colored">
                     <span>Try free demo app online</span>
                 </button>
             </a>
             <div class="spinner-with-button-wrapper">
-                {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} colored big-button" on:click={() => gkrlef(1)}>
-                        <span>Give me access</span>
-                    </button>
-                {:else}
-                    <button class="{!cfasl ? '' : 'disabled'} colored big-button" on:click={() => purchase()}>
-                        <span>Purchase account</span>
-                    </button>
-                {/if}
-                {#if cfasl}
-                    <span class="spinner"></span>
-                {:else if position_available}
-                    <span class="text-glow">Available</span>
-                {/if}
+                <PurchaseCta {position_available} {cfasl} {gkrlef} {purchase}
+                             colored={true}
+                             spinner_order_reverse={true}
+                />
             </div>
         </div>
         <div>-100€ coupon code: <span class="text-glow">IKnowWhatImDoing</span></div>
@@ -300,78 +157,7 @@
         </div>
     </div>
     <div class="secondary-container relative">
-        <div class="readme-text-container">
-            <div class="text-section" id="readme">
-                <img class="logo as-title" src="sir_bofi.svg" alt="">
-                <h2>Introduction</h2>
-                <p>
-                    This platform is advertised to hand-picked communities. The platform “Sir Bofi” finds price
-                    differences (potential arbitrage trading opportunities) over 600+ exchanges and 9000+
-                    cryptocurrencies in <span class="hl">matter of seconds!</span> It is a co-pilot for knowledgeable
-                    crypto-dedicated individuals looking to advance their markets overview and lurk in the shadows for
-                    opportunities (<a class="inline" target="_blank" href="https://rumvessel.gitbook.io/sir-bofi/">Documentation</a>).
-                    I am willing to provide the native version of the software through one time fee thanks to releasing
-                    the platform without using hosting, domain names or external recurring fee services.
-                </p>
-            </div>
-            <div class="text-section">
-                <h2>Confirmed safety</h2>
-                <h3>Microsoft EV Code signing certificate</h3>
-                <p>
-                    We have successfully acquired the Microsoft Windows EV Code Signing Certificate and we have
-                    signed the application with it. This proves that the application is from a <span class="hl">known
-                    and trusted publisher!</span>
-                </p>
-                <h3>Availability</h3>
-                <p>
-                    Windows portable executable version of the application is <span class="hl">signed and available for
-                    download</span> - You can try out <a class="inline" href="https://demo.sirbofi.com">free demo
-                    application online</a> and the premium version after purchasing an
-                    account. MacOS version is currently not available due to the inexistent collaboration from
-                    Apple’s side on even successfully beginning the validation process of applying for the Code
-                    Signing certificate for their operating systems.
-                </p>
-            </div>
-            <div class="text-section">
-                <h2><span class="hl">Claiming process</span></h2>
-                <p>
-                    In case there is a position available you can purchase it from the button “Purchase account”. After
-                    that you'll receive an email with your personal account setup details and the download link to the
-                    full version of Sir Bofi. Thats it - you have it :D.
-                </p>
-            </div>
-            <div class="text-section">
-                <h2>Inspiration</h2>
-                <p>
-                    Sir Bofi was inspired from many cases of people like SBF
-                    <span class="hl">
-                    <a class="inline"
-                       target="_blank"
-                       href="https://www.forbes.com/sites/stevenehrlich/2021/10/06/the-richest-under-30-in-the-world-all-thanks-to-crypto">
-                        getting rich from abnormal opportunities
-                    </a></span> of
-                    trading price aribtrage. In most of those types of cases they discovered the opportunities
-                    accidentally and thanks to working closely with markets daily. The name Sir Bofi comes from initial
-                    name Cyrbofi which is a combination of letters from the phrase “[C]r[y]pto a[rb]itrage
-                    [o]pportunity [fi]nder”.
-                </p>
-            </div>
-
-            <div class="spinner-with-button-wrapper">
-                {#if !position_available}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => gkrlef(1)}>
-                        <span>Give me access</span>
-                    </button>
-                {:else}
-                    <button class="{!cfasl ? '' : 'disabled'} big-button colored" on:click={() => purchase()}>
-                        <span>Purchase account</span>
-                    </button>
-                {/if}
-                {#if cfasl}
-                    <span class="spinner"></span>
-                {/if}
-            </div>
-        </div>
+        <Readme {position_available} {cfasl} {gkrlef} {purchase}/>
         <div class="back-up-button-wrapper">
             <a href="#landing" class="back-up-button">
                 <p style="margin-top: -4px;">↑</p>
@@ -384,10 +170,53 @@
             Telegram
         </a>
         <p class="xs-text">
-            © 2023 RumVessel. All rights reserved.
+            © {current_year} RumVessel. All rights reserved.
         </p>
     </div>
 </main>
+
+<script>
+    import Director from "./components/Director.svelte";
+    import Readme from "./components/Readme.svelte";
+    import TopBar from "./components/TopBar.svelte";
+    import PurchaseCta from "./components/widgets/PurchaseCta.svelte";
+
+    let cfasl = false;
+    let position_available = false;
+    let ll = false;
+    const gkrlef = function (uid) {
+        cfasl = true;
+        let xhr = new XMLHttpRequest();
+        if (ll && cfasl) {
+            xhr.open("POST", "https://srbfi.com/cfa", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let response = JSON.parse(xhr.responseText);
+                    if (response.status === "success") {
+                        return true;
+                    }
+                }
+            }
+            xhr.send(JSON.stringify({uid: uid}));
+        }
+        setTimeout(() => {
+            cfasl = false;
+            position_available = true;
+        }, Math.floor(Math.random() * 2000) + 500);
+        return false;
+    }
+    const purchase = function () {
+        window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
+        return true;
+    }
+
+    let phoneNavActive = false;
+    const togglePhoneNavMenu = function () {
+        phoneNavActive = !phoneNavActive;
+    }
+    const current_year = new Date().getFullYear();
+</script>
 
 <style>
 
@@ -427,7 +256,7 @@
     }
 
     h1.xxl {
-        font-size: clamp(24px, 5vw, 80px) !important;
+        font-size: clamp(24px, 4vw, 80px) !important;
         font-weight: 700;
         margin-bottom: 0;
         margin-top: 20px;
@@ -444,10 +273,6 @@
         margin-bottom: 60px;
     }
 
-    h2 + h3 {
-        margin-top: 0;
-    }
-
     h3 {
         margin-top: 25px;
         font-size: 28px;
@@ -456,11 +281,6 @@
 
     .text-glow {
         color: var(--glow-green);
-    }
-
-    a.inline {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
     }
 
     .xs-text {
@@ -481,28 +301,6 @@
 
     .overlay-items-container {
         position: relative;
-    }
-
-    .top-bar {
-        position: fixed;
-        background-color: hsla(0, 0%, 9%, 0.6);
-        backdrop-filter: blur(10px);
-        min-height: 80px;
-        width: 100vw;
-        z-index: 99;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: var(--slight);
-        padding: 0 40px;
-    }
-
-    .top-bar .nav .nav-items {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 60px;
     }
 
     .base-col {
@@ -545,6 +343,7 @@
         filter: blur(40px);
         opacity: 0.25;
         font-weight: bold;
+        color: black;
     }
 
     @keyframes rotate {
@@ -559,35 +358,9 @@
         }
     }
 
-    *::selection {
-        background-color: var(--light-green);
-    }
-
-    .logo {
+    :global(.logo) {
         width: 64px;
         height: 64px;
-    }
-
-    .logo.navbar {
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: row;
-        white-space: nowrap;
-        align-items: center;
-        font-weight: bold;
-        font-size: 22px;
-        letter-spacing: 1px;
-        color: var(--light);
-    }
-
-    .logo.navbar img {
-        max-width: 32px;
-        max-height: 32px;
-    }
-
-    .logo.as-title {
-        margin: 0 auto 20px;
-        width: 48px;
     }
 
     .back-up-button-wrapper {
@@ -640,24 +413,6 @@
         max-width: 50%;
     }
 
-    .spinner {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2px solid var(--light-green);
-        border-top: 2px solid var(--glow-green);
-        animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(720deg);
-        }
-    }
-
     .primary-container {
         min-height: 100vh;
         width: 100%;
@@ -689,6 +444,13 @@
         color: var(--light);
     }
 
+    .landing-fidget-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 3;
+    }
+
     .secondary-container {
         position: relative;
         display: flex;
@@ -710,40 +472,11 @@
         color: var(--light);
     }
 
-    .readme-text-container {
-        width: 960px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        min-height: 0;
-        overflow: hidden;
-        padding: 60px;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-        background-color: var(--sdark);
-        scroll-margin-top: 200px;
-    }
-
-    .readme-text-container .text-section h2 {
-        font-size: 30px;
-    }
-
-    .readme-text-container .text-section h3 {
-        font-size: 22px;
-    }
-
-    .readme-text-container .text-section {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 30px 20px;
-    }
-
     .landing-title-container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        max-width: 60vw;
+        max-width: 50vw;
         margin: 0 0 100px 5vw;
         flex: 6;
     }
@@ -797,18 +530,6 @@
 
     .point-pad p {
         text-align: center;
-    }
-
-    .spinner-with-button-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .readme-text-container .spinner-with-button-wrapper {
-        align-self: flex-end;
     }
 
     .main-points-section {
@@ -866,6 +587,12 @@
         video {
             max-width: 80%;
         }
+
+        .primary-container-content-wrapper {
+            flex-direction: column;
+            gap: 100px;
+            padding: 30vh 0 20vh;
+        }
     }
 
     @media screen and (max-width: 1080px) {
@@ -874,27 +601,12 @@
             padding: 40px 20px;
         }
 
-        .secondary-container .readme-text-container {
-            width: 100%;
-            padding: 40px;
-            box-shadow: unset;
-        }
-
         p {
             font-size: 16px;
         }
     }
 
-    .burger {
-        visibility: hidden;
-        cursor: pointer;
-    }
-
     @media screen and (max-width: 960px) {
-
-        .top-bar .nav .nav-items { /* Do net delete - is actually used */
-            gap: 20px;
-        }
 
         .primary-container {
             padding: 5vh 20px 0 20px;
@@ -960,43 +672,6 @@
     }
 
     @media screen and (max-width: 700px) {
-        .burger {
-            visibility: visible;
-            margin-right: 20px;
-        }
-
-        .top-bar {
-            padding: 0 20px;
-        }
-
-        .top-bar .nav .nav-items { /* dont delete */
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-            gap: 0;
-            position: fixed;
-            right: 0;
-            top: 80px;
-            width: 100%;
-            align-items: flex-end;
-            backdrop-filter: blur(10px);
-            background-color: hsla(0, 0%, 9%, 0.6);
-            transform: translateY(calc(-100% - 80px));
-        }
-
-        .top-bar .nav .nav-items.open { /* dont delete */
-            transform: translateY(0);
-        }
-
-        .top-bar .nav .nav-items a,
-        .top-bar .nav .nav-items a button {
-            width: 100%;
-            justify-content: center;
-        }
-
-        .top-bar .nav .nav-items a button {
-            padding: 20px;
-        }
 
         .main-points-section h3 {
             margin-bottom: 16px;
@@ -1004,21 +679,6 @@
 
         hr.big {
             display: none;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-
-        button {
-            padding: 12px;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-        }
-
-        video {
-            max-width: 100%;
         }
 
         .buttons-wrapper {
@@ -1028,6 +688,21 @@
         .primary-container-content-wrapper {
             justify-content: center;
             text-align: center;
+        }
+
+        .landing-fidget-container {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        video {
+            max-width: 100%;
         }
 
         .landing-title-container {
@@ -1042,11 +717,6 @@
 
         .secondary-container {
             padding: 60px 0 100px;
-        }
-
-        .secondary-container .readme-text-container {
-            padding: 20px;
-            border-radius: 0;
         }
 
         @keyframes bounce {
