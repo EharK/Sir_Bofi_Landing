@@ -434,7 +434,7 @@
     }
 
     h2 {
-        font-size: 60px;
+        font-size: 64px;
         font-weight: 600;
     }
 
@@ -450,8 +450,8 @@
 
     h3 {
         margin-top: 25px;
-        font-size: 24px;
-        font-weight: 600;
+        font-size: 28px;
+        font-weight: 400;
     }
 
     .text-glow {
