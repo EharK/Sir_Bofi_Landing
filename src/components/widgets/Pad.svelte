@@ -12,6 +12,7 @@
         border-radius: 4px;
         background-color: var(--dark);
         outline: 1px solid rgba(230, 230, 230, 0.2);
+        outline-offset: -1px;
         user-select: none;
         font-size: 24px;
         transition: all 0.15s;

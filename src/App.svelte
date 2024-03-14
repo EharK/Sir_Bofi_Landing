@@ -49,63 +49,7 @@
         </div>
     </div>
     <div class="secondary-container main-points-section">
-        <div id="101" class="section">
-            <h1>Simple to use</h1>
-            <div class="base-row main-points-row">
-                <div class="base-col point-pad">
-                    <img src="wallet.svg" alt="">
-                    <h3>Purchase</h3>
-                    <p>
-                        Purchase private access,
-                        receive software and credentials.
-                    </p>
-                </div>
-                <div class="base-col point-pad">
-                    <img src="key.svg" alt="">
-                    <h3>Set up</h3>
-                    <p>
-                        Download the software,
-                        log in with the credentials provided.
-                    </p>
-                </div>
-                <div class="base-col point-pad">
-                    <img src="rocket.svg" alt="">
-                    <h3>Launch</h3>
-                    <p>
-                        Apply needed filters,
-                        trigger the analysis,
-                        find results in seconds.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <hr class="big">
-        <div class="section">
-            <h2 class="xxl">Sir Bofi 101</h2>
-            <div class="base-row main-points-row">
-                <div class="base-col point-pad">
-                    <img src="lightning.svg" alt="">
-                    <h3>Prompt</h3>
-                    <p>
-                        Opportunities found in seconds between 9000+ currencies.
-                    </p>
-                </div>
-                <div class="base-col point-pad">
-                    <img src="search.svg" alt="">
-                    <h3>Extensive</h3>
-                    <p>
-                        Trading pairs data from 600+ exchanges at your fingertips.
-                    </p>
-                </div>
-                <div class="base-col point-pad">
-                    <img src="cog.svg" alt="">
-                    <h3>Seamless</h3>
-                    <p>
-                        Authenticate, filter and trigger the analysis with ease.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <Roadmap/>
         <div class="buttons-wrapper">
             <a href="https://demo.sirbofi.com/" target="_blank">
                 <button class="big-button colored">
@@ -129,28 +73,16 @@
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
                             <h2>Initial Utilities</h2>
-                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37"
-                                 viewBox="0 0 44 37"
-                                 fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M23.1687 0.903087C24.3682 -0.301029 26.3129 -0.301029 27.5124 0.903087L42.8695 16.3198C44.069 17.5239 44.069 19.4761 42.8695 20.6802L27.5124 36.0969C26.3129 37.301 24.3682 37.301 23.1687 36.0969C21.9692 34.8928 21.9692 32.9405 23.1687 31.7364L33.2826 21.5833H3.84053C2.14423 21.5833 0.769104 20.2029 0.769104 18.5C0.769104 16.7971 2.14423 15.4167 3.84053 15.4167H33.2826L23.1687 5.26358C21.9692 4.05946 21.9692 2.1072 23.1687 0.903087Z"
-                                      fill="#02FF00"/>
-                            </svg>
+                            <img class="arrow-svg" src="/arrow.svg" alt="arrow">
                         </div>
-                        <p class="tokenomics-text">Staking | Profit share | Buy Back</p>
+                        <p class="tokenomics-text">Staking - Profit share - Buy Back</p>
                     </div>
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
-                            <h2>Planned Utilities</h2>
-                            <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="44" height="37"
-                                 viewBox="0 0 44 37"
-                                 fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M23.1687 0.903087C24.3682 -0.301029 26.3129 -0.301029 27.5124 0.903087L42.8695 16.3198C44.069 17.5239 44.069 19.4761 42.8695 20.6802L27.5124 36.0969C26.3129 37.301 24.3682 37.301 23.1687 36.0969C21.9692 34.8928 21.9692 32.9405 23.1687 31.7364L33.2826 21.5833H3.84053C2.14423 21.5833 0.769104 20.2029 0.769104 18.5C0.769104 16.7971 2.14423 15.4167 3.84053 15.4167H33.2826L23.1687 5.26358C21.9692 4.05946 21.9692 2.1072 23.1687 0.903087Z"
-                                      fill="#02FF00"/>
-                            </svg>
+                            <h2>In progress</h2>
+                            <img class="arrow-svg" src="/arrow.svg" alt="arrow">
                         </div>
-                        <p class="tokenomics-text">Platform token-gating</p>
+                        <p class="tokenomics-text">Token-gate</p>
                     </div>
                 </div>
             </div>
@@ -180,6 +112,7 @@
     import Readme from "./components/Readme.svelte";
     import TopBar from "./components/TopBar.svelte";
     import PurchaseCta from "./components/widgets/PurchaseCta.svelte";
+    import Roadmap from "./components/Roadmap.svelte";
 
     let cfasl = false;
     let position_available = false;
@@ -219,7 +152,6 @@
 </script>
 
 <style>
-
     .buttons-wrapper {
         display: flex;
         flex-direction: row;
@@ -421,7 +353,6 @@
         box-sizing: border-box;
         flex-direction: column;
         justify-content: center;
-        background: url("/blurred.png") fixed;
         background-size: cover;
         z-index: 10;
     }
@@ -451,6 +382,12 @@
         flex: 3;
     }
 
+    .secondary-container.dark {
+        background: transparent;
+        backdrop-filter: brightness(0.4);
+        color: var(--light);
+    }
+
     .secondary-container {
         position: relative;
         display: flex;
@@ -460,14 +397,6 @@
         padding: 100px 50px;
         transition: all 0.5s ease;
         z-index: 20;
-    }
-
-    .secondary-container.dark {
-        background-color: var(--dark);
-        color: var(--light);
-    }
-
-    .secondary-container {
         background: linear-gradient(115deg, var(--dark) 0%, #0c0c0c 100%);
         color: var(--light);
     }
@@ -486,6 +415,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .main-points-section {
+        background: linear-gradient(-45deg, rgba(15, 26, 15, 1) 0%, rgba(13, 13, 13, 0.2) 100%);
+        color: var(--slight) !important;
+        padding-bottom: 200px !important;
     }
 
     .main-points-section h1 {
@@ -532,12 +467,6 @@
         text-align: center;
     }
 
-    .main-points-section {
-        background: linear-gradient(-45deg, #0f1a0f 0%, #0d0d0d 100%);
-        color: var(--slight) !important;
-        padding-bottom: 200px !important;
-    }
-
     .base-row {
         display: flex;
         flex-direction: row;
@@ -580,6 +509,7 @@
     .tokenomics-chart {
         margin-right: 24px;
         flex: 3;
+        height: 600px;
         min-width: 0;
     }
 

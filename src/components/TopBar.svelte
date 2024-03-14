@@ -1,36 +1,39 @@
 <main>
-        <div class="top-bar">
-            <div class="relative">
-                <a href="/" class="absolute logo navbar">
-                    <img class="" src="sir_bofi.svg" alt="Sir Bofi logo">
-                    Sir Bofi
+    <div class="top-bar">
+        <div class="relative">
+            <a href="/" class="absolute logo navbar">
+                <img class="" src="sir_bofi.svg" alt="Sir Bofi logo">
+                Sir Bofi
+            </a>
+        </div>
+        <div class="nav">
+            <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
+                <a href="#landing">
+                    <button class="bones">Home</button>
+                </a>
+                <a href="http://demo.sirbofi.com" target="_blank">
+                    <button class="bones">Demo</button>
+                </a>
+                <a href="#101">
+                    <button class="bones">About</button>
+                </a>
+                <a href="#tokenomics">
+                    <button class="bones">Tokenomics</button>
+                </a>
+                <a href="#readme">
+                    <button class="bones">Overview</button>
                 </a>
             </div>
-            <div class="nav">
-                <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
-                    <a href="#landing">
-                        <button class="bones">Home</button>
-                    </a>
-                    <a href="http://demo.sirbofi.com" target="_blank">
-                        <button class="bones">Demo</button>
-                    </a>
-                    <a href="#101">
-                        <button class="bones">About</button>
-                    </a>
-                    <a href="#tokenomics">
-                        <button class="bones">Tokenomics</button>
-                    </a>
-                    <a href="#readme">
-                        <button class="bones">Overview</button>
-                    </a>
-                </div>
-            </div>
-            <div class="burger"
-                 on:click={togglePhoneNavMenu} on:keydown={()=>{}}
-                 role="button" tabindex="0">
-                <img src="burger.svg" alt="">
-            </div>
         </div>
+        <div class="burger"
+             on:click={togglePhoneNavMenu} on:keydown={()=>{}}
+             role="button" tabindex="0">
+            <img src="burger.svg" alt="">
+        </div>
+        <button class="colored cta">
+            Try demo
+        </button>
+    </div>
 </main>
 
 <script>
@@ -42,6 +45,12 @@
 
     a, button {
         height: 100%;
+    }
+
+    button.cta {
+        position: absolute;
+        right: 40px;
+        height: 40px;
     }
 
     .top-bar {
@@ -58,6 +67,7 @@
         color: var(--slight);
         padding: 0 40px;
     }
+
     .top-bar .nav .nav-items {
         display: flex;
         align-items: center;
@@ -98,6 +108,10 @@
         .burger {
             visibility: visible;
             margin-right: 20px;
+        }
+
+        button.cta {
+            display: none;
         }
 
         .top-bar {

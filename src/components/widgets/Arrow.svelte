@@ -1,12 +1,12 @@
 <main>
-    <div class="container">
-        <div class="line"></div>
+    <div class="container {direction}">
+        <div class="line {direction}"></div>
         <div class="head"></div>
     </div>
 </main>
 
 <script>
-
+    export let direction = 'down';
 </script>
 
 <style>
@@ -17,11 +17,25 @@
         align-items: center;
     }
 
+    .container.right {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .container.up {
+        transform: rotate(180deg);
+    }
+
     .line {
         height: 60px;
-        min-height: 20px;
         background: linear-gradient(0deg, var(--glow-green), var(--dark));
         width: 2px;
+    }
+
+    .line.right {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(-90deg, var(--glow-green), var(--dark));
     }
 
     .head {

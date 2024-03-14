@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--light-green);
+    border-radius: 12px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--ghighlight);
+}
+
 :root {
     --light: #f2f2f2;
     --slight: #e6e6e6;
@@ -31,6 +48,8 @@ body, html {
     overflow-x: hidden;
     scroll-padding-top: 150px;
     color: var(--slight);
+    background: url("/blurred.png") fixed;
+    background-size: cover;
 }
 
 .absolute {
@@ -155,6 +174,7 @@ button:active {
 *::selection {
     background-color: var(--light-green);
 }
+
 .spinner {
     width: 20px;
     height: 20px;
