@@ -22,6 +22,11 @@
         height: 100%;
     }
 
+    .container.left {
+        flex-direction: row-reverse;
+        height: 100%;
+    }
+
     .container.up {
         transform: rotate(180deg);
     }
@@ -36,6 +41,12 @@
         width: 60px;
         height: 2px;
         background: linear-gradient(-90deg, var(--glow-green), var(--dark));
+    }
+
+    .line.left {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--glow-green), var(--dark));
     }
 
     .head {

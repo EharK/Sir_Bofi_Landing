@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
 }
 
 *::-webkit-scrollbar-track {
@@ -10,7 +10,7 @@
 
 *::-webkit-scrollbar-thumb {
     background: var(--light-green);
-    border-radius: 12px;
+    border-radius: 4px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -68,7 +68,7 @@ button {
     color: var(--light);
     border-radius: 8px;
     padding: 8px 24px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
     user-select: none;
     display: flex;
     align-items: center;
@@ -152,10 +152,6 @@ button:active {
     cursor: default;
 }
 
-.coming-soon {
-    pointer-events: none;
-}
-
 .disabled {
     opacity: 0.5;
     cursor: unset;
@@ -190,4 +186,22 @@ button:active {
     flex-direction: row;
     align-items: center;
     gap: 20px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.gap-8 {
+    gap: 8px;
+}
+
+.w-full {
+    width: 100%;
 }

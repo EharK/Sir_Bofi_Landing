@@ -49,7 +49,10 @@
         </div>
     </div>
     <div class="secondary-container main-points-section">
-        <Roadmap/>
+        <div class="w-full" id="roadmap">
+            <h1>Roadmap</h1>
+            <Roadmap/>
+        </div>
         <div class="buttons-wrapper">
             <a href="https://demo.sirbofi.com/" target="_blank">
                 <button class="big-button colored">
@@ -172,43 +175,6 @@
 
     .hl.green {
         background-color: var(--ghighlight);
-    }
-
-    p {
-        font-size: 20px;
-        line-height: 1.5;
-        text-align: justify;
-    }
-
-    h1 {
-        justify-self: center;
-        font-size: clamp(40px, 4vw, 80px) !important;
-        font-weight: 700;
-        margin-bottom: 60px;
-    }
-
-    h1.xxl {
-        font-size: clamp(24px, 4vw, 80px) !important;
-        font-weight: 700;
-        margin-bottom: 0;
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 64px;
-        font-weight: 600;
-    }
-
-    h2.xxl {
-        font-size: clamp(26px, 4vw, 80px) !important;
-        margin-top: 40px;
-        margin-bottom: 60px;
-    }
-
-    h3 {
-        margin-top: 25px;
-        font-size: 28px;
-        font-weight: 400;
     }
 
     .text-glow {
@@ -401,6 +367,10 @@
         color: var(--light);
     }
 
+    .secondary-container h1 {
+        text-align: center;
+    }
+
     .landing-title-container {
         display: flex;
         flex-direction: column;
@@ -465,6 +435,43 @@
 
     .point-pad p {
         text-align: center;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    h1 {
+        justify-self: center;
+        font-size: clamp(40px, 4vw, 80px) !important;
+        font-weight: 700;
+        margin-bottom: 60px;
+    }
+
+    h1.xxl {
+        font-size: clamp(24px, 4vw, 80px) !important;
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 64px;
+        font-weight: 600;
+    }
+
+    h2.xxl {
+        font-size: clamp(26px, 4vw, 80px) !important;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    h3 {
+        margin-top: 25px;
+        font-size: 28px;
+        font-weight: 400;
     }
 
     .base-row {

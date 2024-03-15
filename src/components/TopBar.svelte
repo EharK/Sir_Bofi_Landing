@@ -8,20 +8,20 @@
         </div>
         <div class="nav">
             <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
-                <a href="#landing">
-                    <button class="bones">Home</button>
-                </a>
                 <a href="http://demo.sirbofi.com" target="_blank">
                     <button class="bones">Demo</button>
                 </a>
-                <a href="#101">
-                    <button class="bones">About</button>
+                <a href="#roadmap">
+                    <button class="bones">Roadmap</button>
                 </a>
                 <a href="#tokenomics">
                     <button class="bones">Tokenomics</button>
                 </a>
                 <a href="#readme">
-                    <button class="bones">Overview</button>
+                    <button class="bones">About</button>
+                </a>
+                <a href="">
+                    <button class="bones">Chart</button>
                 </a>
             </div>
         </div>
@@ -37,8 +37,43 @@
 </main>
 
 <script>
+    import {onMount} from "svelte";
+
     export let phoneNavActive;
     export let togglePhoneNavMenu;
+
+    let lastScroll = 0;
+    onMount(
+        () => {
+            const topBar = document.querySelector('.top-bar');
+            window.addEventListener(
+                'scroll',
+                () => {
+                    const currentScroll = window.scrollY;
+                    if (currentScroll > lastScroll) {
+                        topBar.style.top = '-100px';
+                    } else {
+                        if (window.innerWidth > 780) {
+                            topBar.style.top = '20px';
+                        } else {
+                            topBar.style.top = '0';
+                        }
+                    }
+                    lastScroll = currentScroll;
+                }
+            );
+            window.addEventListener(
+                'resize',
+                () => {
+                    if (window.innerWidth < 780) {
+                        topBar.style.top = '0';
+                    } else {
+                        topBar.style.top = '20px';
+                    }
+                }
+            )
+        }
+    );
 </script>
 
 <style>
@@ -53,12 +88,18 @@
         height: 40px;
     }
 
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
     .top-bar {
         position: fixed;
-        background-color: hsla(0, 0%, 9%, 0.6);
-        backdrop-filter: blur(4px) brightness(0.2);
+        background-color: hsla(0, 0%, 9%, 0);
+        backdrop-filter: blur(14px) brightness(0.5);
+        transition: top 0.3s;
         height: 80px;
-        width: 100vw;
+        width: 80vw;
         z-index: 99;
         box-sizing: border-box;
         display: flex;
@@ -66,6 +107,9 @@
         justify-content: space-between;
         color: var(--slight);
         padding: 0 40px;
+        border-radius: 8px;
+        overflow: hidden;
+        top: 20px;
     }
 
     .top-bar .nav .nav-items {
@@ -97,14 +141,20 @@
         cursor: pointer;
     }
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 1300px) {
+        .top-bar {
+            width: 90vw;
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
 
         .top-bar .nav .nav-items { /* Do net delete - is actually used */
             gap: 20px;
         }
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 780px) {
         .burger {
             visibility: visible;
             margin-right: 20px;
@@ -116,6 +166,8 @@
 
         .top-bar {
             padding: 0 20px;
+            width: 100%;
+            overflow: visible;
         }
 
         .top-bar .nav .nav-items { /* dont delete */

@@ -1,5 +1,5 @@
 <main>
-    <div class="container">
+    <div class="container fidget">
         <div class="absolute bubble markets">
             600+ markets
         </div>
@@ -30,13 +30,13 @@
         const rect = el.getBoundingClientRect();
         return {
             x: rect.x + rect.width / 2,
-            y: rect.y + rect.height / 2
+            y: rect.y + rect.height / 2 + window.scrollY
         };
     }
     onMount(
         () => {
             // 3d fidget hover code
-            const fidget = document.querySelector('.container');
+            const fidget = document.querySelector('.container.fidget');
             if (fidget) {
                 let fidgetCenter = getElementCenter(fidget);
                 let windowWidth = window.innerWidth;

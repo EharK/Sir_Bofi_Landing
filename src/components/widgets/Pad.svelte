@@ -3,6 +3,9 @@
     </slot>
 </main>
 
+<script>
+</script>
+
 <style>
     .pad {
         text-align: center;
@@ -14,7 +17,6 @@
         outline: 1px solid rgba(230, 230, 230, 0.2);
         outline-offset: -1px;
         user-select: none;
-        font-size: 24px;
         transition: all 0.15s;
     }
 

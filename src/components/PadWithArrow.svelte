@@ -23,4 +23,8 @@ export let direction = "down";
     .container.right {
         flex-direction: row;
     }
+
+    .container.left {
+        flex-direction: row-reverse;
+    }
 </style>
