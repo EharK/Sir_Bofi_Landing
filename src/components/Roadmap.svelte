@@ -133,16 +133,6 @@
 </script>
 <style>
 
-
-    .coming-soon {
-        opacity: 0.5;
-    }
-
-    .coming-soon :global(.pad:hover) {
-        background: rgba(128, 202, 255, 0.4);
-        outline: 1px solid #009dff;
-    }
-
     h2 {
         font-size: 32px;
         white-space: nowrap;

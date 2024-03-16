@@ -106,6 +106,7 @@
             </a>
             <a href="https://demo.sirbofi.com/" target="_blank">
                 <button class="big-button colored">
+                    <img src="/icons/dexscreener.svg" width="24" height="24" alt="" class="invert">
                     <span>Chart</span>
                 </button>
             </a>
@@ -130,6 +131,9 @@
             <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58" target="_blank">
                 <img src="icons/dexscreener.svg" class="icon rise-on-hover" alt="DEXScreener">
             </a>
+            <a href="https://www.reddit.com/r/SirBofiOfficial/" target="_blank">
+                <img src="icons/reddit.svg" class="icon rise-on-hover" alt="Reddit">
+            </a>
         </div>
         <p class="xs-text">
             © {current_year} RumVessel. All rights reserved.
@@ -142,6 +146,7 @@
     import Readme from "./components/Readme.svelte";
     import TopBar from "./components/TopBar.svelte";
     import Roadmap from "./components/Roadmap.svelte";
+    import {onMount} from "svelte";
 
     let cfasl = false;
     let position_available = false;
@@ -172,15 +177,26 @@
         window.open("https://buy.stripe.com/fZedSn9pX97DbXq6oo", "_blank");
         return true;
     }
-
     let phoneNavActive = false;
     const togglePhoneNavMenu = function () {
         phoneNavActive = !phoneNavActive;
     }
     const current_year = new Date().getFullYear();
+
+    onMount(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                document.querySelector('.back-up-button-wrapper').style.opacity = '1';
+            } else {
+                document.querySelector('.back-up-button-wrapper').style.opacity = '0';
+            }
+        });
+    });
+
 </script>
 
 <style>
+
     .buttons-wrapper {
         display: flex;
         flex-direction: row;
@@ -260,8 +276,8 @@
         animation: rotate 50s linear infinite;
         line-height: 1.2;
         filter: blur(40px);
-        opacity: 0.25;
-        font-weight: bold;
+        opacity: 0.5;
+        font-weight: 400;
         color: black;
     }
 
@@ -290,6 +306,8 @@
         display: flex;
         justify-content: flex-end;
         padding: 20px;
+        transition: all 0.15s;
+        opacity: 0;
     }
 
     .back-up-button {
@@ -328,18 +346,23 @@
         align-items: center;
     }
 
+    #demonstration {
+        width: 100%;
+    }
+
     .video-container {
         position: relative;
         overflow: hidden;
         transition: all 0.5s ease;
         max-width: 50%;
-        width: 50%;
+        min-width: 50%;
         aspect-ratio: 16/9;
     }
 
     .video-container iframe {
         position: absolute;
-        width: 100%;
+        min-width: 100%;
+        aspect-ratio: 16/9;
     }
 
     .primary-container {
@@ -433,41 +456,6 @@
         font-size: 48px;
         margin-bottom: 60px;
     }
-
-    .main-points-section h3 {
-        text-transform: uppercase;
-        font-size: clamp(34px, 3vw, 48px) !important;
-        font-weight: bold;
-    }
-
-    .main-points-row {
-        width: 100%;
-        padding: 20px;
-        gap: 40px;
-        color: var(--slight);
-        max-width: 1500px;
-    }
-
-    .point-pad {
-        align-items: center;
-        padding: 70px 50px 70px 50px;
-        border-radius: 8px;
-        transition: all 0.5s ease;
-    }
-
-    .point-pad:hover {
-        outline: #99ff99 1px solid;
-        box-shadow: 0 0 40px rgba(33, 255, 35, 0.15);
-    }
-
-    .point-pad img {
-        margin-bottom: 20px;
-    }
-
-    .point-pad p {
-        text-align: center;
-    }
-
     p {
         font-size: 20px;
         line-height: 1.5;
@@ -493,22 +481,32 @@
         font-weight: 600;
     }
 
-    h2.xxl {
-        font-size: clamp(26px, 4vw, 80px) !important;
-        margin-top: 40px;
-        margin-bottom: 60px;
-    }
-
-    h3 {
-        margin-top: 25px;
-        font-size: 28px;
-        font-weight: 400;
-    }
-
     .base-row {
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+
+    .tokenomics-text-container {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: all 0.15s;
+        padding: 40px;
+        border-radius: 20px;
+        user-select: none;
+    }
+
+    .tokenomics-text-container:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .tokenomics-text-container .arrow-svg {
+        transition: all 0.15s;
+    }
+
+    .tokenomics-text-container:hover .arrow-svg {
+        transform: translateX(10px);
     }
 
     .tokenomics-row {
@@ -523,7 +521,7 @@
     }
 
     .token-utilities-wrapper {
-        gap: 80px;
+        gap: 40px;
         flex: 2;
     }
 
@@ -557,7 +555,7 @@
 
     @media screen and (max-width: 1280px) {
         .video-container {
-            max-width: 80%;
+            min-width: 80%;
         }
 
         .primary-container-content-wrapper {
@@ -639,7 +637,7 @@
         }
 
         .video-container {
-            max-width: 100%;
+            min-width: 100%;
         }
     }
 
@@ -674,7 +672,7 @@
         }
 
         .video-container {
-            max-width: 100%;
+            min-width: 100%;
         }
 
         .landing-title-container {
@@ -716,6 +714,7 @@
         .primary-container {
             padding: 5vh 0 0 0;
         }
+
     }
 
 </style>

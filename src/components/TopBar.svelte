@@ -1,4 +1,4 @@
-<main>
+<main class="relative">
     <div class="top-bar">
         <div class="relative">
             <a href="/" class="absolute logo navbar">
@@ -8,20 +8,29 @@
         </div>
         <div class="nav">
             <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
-                <a href="http://demo.sirbofi.com" target="_blank">
-                    <button class="bones">Demo</button>
-                </a>
                 <a href="#roadmap">
-                    <button class="bones">Roadmap</button>
+                    <button class="bones">
+                        Roadmap
+                    </button>
                 </a>
                 <a href="#tokenomics">
-                    <button class="bones">Tokenomics</button>
+                    <button class="bones relative">
+                        Tokenomics
+                    </button>
                 </a>
-                <a href="#readme">
-                    <button class="bones">About</button>
+                <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
+                   target="_blank">
+                    <button class="bones">
+                        <img src="/icons/dexscreener.svg" width="16px" height="16px"
+                             alt="dexscreener" class="dexscreener-icon">
+                        Chart
+                    </button>
                 </a>
-                <a href="">
-                    <button class="bones">Chart</button>
+                <a href="https://rumvessel.gitbook.io/sir-bofi">
+                    <button class="bones">
+                        <img src="/icons/gitbook.png" width="16px" height="16px" alt="gitbook" class="gitbook-icon">
+                        Gitbook
+                    </button>
                 </a>
             </div>
         </div>
@@ -38,6 +47,7 @@
 
 <script>
     import {onMount} from "svelte";
+    import Pad from "./widgets/Pad.svelte";
 
     export let phoneNavActive;
     export let togglePhoneNavMenu;
@@ -50,7 +60,7 @@
                 'scroll',
                 () => {
                     const currentScroll = window.scrollY;
-                    if (currentScroll-lastScroll > 0 && currentScroll > 700) {
+                    if (currentScroll - lastScroll > 0 && currentScroll > 700) {
                         topBar.style.top = '-100px';
                     } else {
                         if (window.innerWidth > 780) {
@@ -78,8 +88,21 @@
 
 <style>
 
+    .gitbook-icon {
+        filter: invert(1);
+    }
+
     a, button {
         height: 100%;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+    }
+
+    .dexscreener-icon {
+        transform: translateY(1px);
     }
 
     button.cta {
@@ -108,7 +131,6 @@
         color: var(--slight);
         padding: 0 40px;
         border-radius: 8px;
-        overflow: hidden;
         top: 20px;
     }
 

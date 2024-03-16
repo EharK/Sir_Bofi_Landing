@@ -3,41 +3,30 @@
         <img class="logo as-title" src="sir_bofi.svg" alt="">
         <h2>Introduction</h2>
         <p>
-            This platform is advertised to hand-picked communities. The platform “Sir Bofi” finds price
-            differences (potential arbitrage trading opportunities) over 600+ exchanges and 9000+
-            cryptocurrencies in <span class="hl">matter of seconds!</span> It is a co-pilot for knowledgeable
-            crypto-dedicated individuals looking to advance their markets overview and lurk in the shadows for
-            opportunities (<a class="inline" target="_blank"
-                              href="https://rumvessel.gitbook.io/sir-bofi/">Documentation</a>).
-            I am willing to provide the native version of the software through one time fee thanks to releasing
-            the platform without using hosting, domain names or external recurring fee services.
+            Sir Bofi platform as the fastest in the industry arbitrage platform pours opportunities for
+            its users. The platforms covers over 600 exchanges both CEX & DEX, gets trading information of over
+            9000 cryptocurrencies and is capable of calculating thousands of price differences amongst every combination
+            of trading pairs while applying advanced user-defined filters. (<a class="inline" target="_blank"
+                              href="https://rumvessel.gitbook.io/sir-bofi/">Documentation</a>)
         </p>
     </div>
     <div class="text-section">
         <h2>Confirmed Safety</h2>
         <h3>Microsoft EV Code Signing Certificate</h3>
         <p>
-            We have successfully acquired the Microsoft Windows EV Code Signing Certificate and we have
-            signed the application with it. This proves that the application is from a <span class="hl">known
-                    and trusted publisher!</span>
-        </p>
-        <h3>Availability</h3>
-        <p>
-            Windows portable executable version of the application is <span class="hl">signed and available for
-                    download</span> - You can try out
-            <a class="inline" href="https://demo.sirbofi.com" target="_blank">free demo
-                application online</a> and the premium version after purchasing an
-            account. MacOS version is currently not available due to the inexistent collaboration from
-            Apple’s side on even successfully beginning the validation process of applying for the Code
-            Signing certificate for their operating systems.
+            During our endavours Sir Bofi Platform acquired the Microsoft Windows EV Code Signing Certificate. This - being
+            <a class="inline" href="https://signmycode.com/blog/what-is-ev-code-signing-certificate-how-does-it-work
+            #:~:text=one%20of%20the%20most%20advanced%20and%20integrity%2Dassuring%20mechanisms" target="_blank">
+                "one of the most advanced and integrity-assuring mechanisms"</a> -
+            proves that the application is safe and from a <span class="hl">known/trusted publisher!</span>
         </p>
     </div>
     <div class="text-section">
-        <h2><span class="hl">Claiming Process</span></h2>
+        <h2>Availability</h2>
         <p>
-            In case there is a position available you can purchase it from the button “Purchase account”. After
-            that you'll receive an email with your personal account setup details and the download link to the
-            full version of Sir Bofi. Thats it - you have it :D.
+            Lifetime Premium Accounts to the native application are not available anymore. We have now turned our focus
+            entirely onto building a web platform with WalletConnect Authentication and Subscription / Token Gated access.
+            In the meantime you can <a class="inline" href="https://demo.sirbofi.com" target="_blank">Try Free Demo</a>.
         </p>
     </div>
     <div class="text-section">
@@ -68,16 +57,16 @@
 
 <style>
 
+    p, h2, h3 {
+        color: var(--slight);
+    }
+
     p {
         font-size: 20px;
     }
 
     .big-button.colored {
         margin-top: 60px;
-    }
-
-    .readme-text-container .spinner-with-button-wrapper {
-        align-self: flex-end;
     }
 
     .readme-text-container {
@@ -113,10 +102,6 @@
         width: 48px;
     }
 
-    h2 + h3 {
-        margin-top: 0;
-    }
-
     a.inline {
         text-decoration: underline;
         text-decoration-thickness: 1px;
@@ -131,12 +116,6 @@
     }
 
     @media screen and (max-width: 500px) {
-
-        .spinner-with-button-wrapper {
-            flex-direction: column;
-            justify-content: center;
-            max-height: min-content;
-        }
 
         .readme-text-container {
             padding: 20px;

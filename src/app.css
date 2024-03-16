@@ -78,6 +78,10 @@ body, html {
     background-size: cover;
 }
 
+.invert {
+    filter: invert(1);
+}
+
 .absolute {
     position: absolute;
 }
