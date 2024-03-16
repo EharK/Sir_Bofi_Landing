@@ -25,6 +25,7 @@
     --highlight: rgba(255, 230, 128, 0.4);
     --ghighlight: rgba(92, 230, 205, 0.3);
     --glow-green: #00ff00;
+    --green: #80f938;
     --sglow-green: #006600;
     --light-green: rgba(92, 230, 205, 0.2);
 }
@@ -42,6 +43,31 @@ a {
     text-decoration: none;
     color: unset;
     width: fit-content;
+}
+
+a.inline {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    color: var(--green);
+    transition: all 0.15s;
+}
+
+a.inline:hover {
+    filter: drop-shadow(0 0 4px var(--green));
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+    aspect-ratio: 1/1;
+}
+
+.rise-on-hover {
+    transition: all 0.15s;
+}
+
+.rise-on-hover:hover {
+    transform: translateY(-2px);
 }
 
 body, html {

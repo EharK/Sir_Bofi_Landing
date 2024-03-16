@@ -11,12 +11,12 @@
                 <div class="buttons-wrapper">
                     <a href="#demonstration">
                         <button class="big-button transparent">
-                            What is it?
+                            Tell Me More
                         </button>
                     </a>
                     <a href="https://demo.sirbofi.com/" target="_blank">
                         <button class="big-button colored">
-                            <span>TRY DEMO NOW</span>
+                            <span>Try Free Demo</span>
                         </button>
                     </a>
                 </div>
@@ -33,16 +33,23 @@
     </div>
     <div class="secondary-container dark">
         <div class="col center" id="demonstration">
-            <h1>Demonstration</h1>
-            <video controls controlslist="nodownload">
-                <source src="sir_bofi_demo.mp4" type="video/mp4">
-                <track kind="captions" default src="">
-            </video>
+            <h1>See How It Works</h1>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/ZDBe69n0Usw"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
             <div class="buttons-wrapper">
-                <PurchaseCta {position_available} {cfasl} {gkrlef} {purchase}/>
+                <a href="#readme">
+                    <button class="big-button transparent">
+                        <span>Read More</span>
+                    </button>
+                </a>
                 <a href="https://demo.sirbofi.com/" target="_blank">
                     <button class="big-button colored">
-                        <span>Try free demo app online</span>
+                        <span>Try Free Demo</span>
                     </button>
                 </a>
             </div>
@@ -54,19 +61,18 @@
             <Roadmap/>
         </div>
         <div class="buttons-wrapper">
-            <a href="https://demo.sirbofi.com/" target="_blank">
-                <button class="big-button colored">
-                    <span>Try free demo app online</span>
+            <a href="#readme">
+                <button class="big-button transparent">
+                    <span>Read More</span>
                 </button>
             </a>
-            <div class="spinner-with-button-wrapper">
-                <PurchaseCta {position_available} {cfasl} {gkrlef} {purchase}
-                             colored={true}
-                             spinner_order_reverse={true}
-                />
-            </div>
+            <a href="https://demo.sirbofi.com/" target="_blank">
+                <button class="big-button colored">
+                    <span>Try Free Demo</span>
+                </button>
+            </a>
         </div>
-        <div>-100€ coupon code: <span class="text-glow">IKnowWhatImDoing</span></div>
+        <div>-100€ coupon code: <span class="text-green">IKnowWhatImDoing</span></div>
         <hr class="big">
         <div id="tokenomics" class="section tokenomics-section">
             <h1>$BOFI Tokenomics</h1>
@@ -82,17 +88,31 @@
                     </div>
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
-                            <h2>In progress</h2>
+                            <h2>In Progress</h2>
                             <img class="arrow-svg" src="/arrow.svg" alt="arrow">
                         </div>
-                        <p class="tokenomics-text">Token-gate</p>
+                        <p class="tokenomics-text">Token Gated Access</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="buttons-wrapper">
+            <a href="https://etherscan.io/token/0xe3374f14be081eae24e39e18360422b7aa769859" target="_blank">
+                <button class="big-button transparent">
+                    <img src="/icons/etherscan.svg" width="24" height="24" alt="etherscan">
+                    <span>Etherscan</span>
+                </button>
+            </a>
+            <a href="https://demo.sirbofi.com/" target="_blank">
+                <button class="big-button colored">
+                    <span>Chart</span>
+                </button>
+            </a>
+        </div>
     </div>
     <div class="secondary-container relative">
-        <Readme {position_available} {cfasl} {gkrlef} {purchase}/>
+        <Readme/>
         <div class="back-up-button-wrapper">
             <a href="#landing" class="back-up-button">
                 <p style="margin-top: -4px;">↑</p>
@@ -100,10 +120,17 @@
         </div>
     </div>
     <div class="base-row strict footer-container">
-        <a href="https://t.me/SirBofiportal" target="_blank" class="base-row strict link-and-icon">
-            <img src="telegram.svg" alt="">
-            Telegram
-        </a>
+        <div class="flex-row footer-icons-list">
+            <a href="https://t.me/SirBofiportal" target="_blank">
+                <img src="icons/telegram.svg" class="icon rise-on-hover" alt="Telegram">
+            </a>
+            <a href="https://twitter.com/sir_bofi" target="_blank">
+                <img src="icons/xdotcom.svg" class="icon rise-on-hover" alt="Twitter / x.com">
+            </a>
+            <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58" target="_blank">
+                <img src="icons/dexscreener.svg" class="icon rise-on-hover" alt="DEXScreener">
+            </a>
+        </div>
         <p class="xs-text">
             © {current_year} RumVessel. All rights reserved.
         </p>
@@ -114,7 +141,6 @@
     import Director from "./components/Director.svelte";
     import Readme from "./components/Readme.svelte";
     import TopBar from "./components/TopBar.svelte";
-    import PurchaseCta from "./components/widgets/PurchaseCta.svelte";
     import Roadmap from "./components/Roadmap.svelte";
 
     let cfasl = false;
@@ -177,17 +203,12 @@
         background-color: var(--ghighlight);
     }
 
-    .text-glow {
-        color: var(--glow-green);
+    .text-green {
+        color: var(--green);
     }
 
     .xs-text {
         font-size: 12px;
-    }
-
-    .link-and-icon {
-        gap: 8px;
-        cursor: pointer;
     }
 
     .footer-container {
@@ -273,7 +294,7 @@
 
     .back-up-button {
         pointer-events: all !important;
-        background-color: var(--sdark);
+        background-color: var(--dark);
         border-radius: 50%;
         aspect-ratio: 1/1;
         width: 50px;
@@ -281,11 +302,13 @@
         justify-content: center;
         align-items: center;
         color: var(--light);
+        outline: 1px solid transparent;
         transition: all 0.2s ease;
     }
 
     .back-up-button:hover {
         background-color: var(--light-green);
+        outline: 1px solid var(--glow-green);
         transform: translateY(-2px);
     }
 
@@ -305,10 +328,18 @@
         align-items: center;
     }
 
-    video {
-        border-radius: 8px;
+    .video-container {
+        position: relative;
+        overflow: hidden;
         transition: all 0.5s ease;
         max-width: 50%;
+        width: 50%;
+        aspect-ratio: 16/9;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        width: 100%;
     }
 
     .primary-container {
@@ -388,7 +419,7 @@
     }
 
     .main-points-section {
-        background: linear-gradient(-45deg, rgba(15, 26, 15, 1) 0%, rgba(13, 13, 13, 0.2) 100%);
+        background: linear-gradient(-45deg, rgb(26, 26, 26) 0%, rgba(13, 13, 13, 0.2) 100%);
         color: var(--slight) !important;
         padding-bottom: 200px !important;
     }
@@ -480,10 +511,6 @@
         align-items: center;
     }
 
-    .base-row.strict {
-        flex-direction: row !important;
-    }
-
     .tokenomics-row {
         width: 100%;
         justify-content: center;
@@ -520,8 +547,16 @@
         min-width: 0;
     }
 
+    .footer-icons-list {
+        gap: 20px;
+    }
+
+    .footer-icons-list .icon:hover {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    }
+
     @media screen and (max-width: 1280px) {
-        video {
+        .video-container {
             max-width: 80%;
         }
 
@@ -603,7 +638,7 @@
             margin-top: -100px;
         }
 
-        video {
+        .video-container {
             max-width: 100%;
         }
     }
@@ -638,7 +673,7 @@
             margin-bottom: 30px;
         }
 
-        video {
+        .video-container {
             max-width: 100%;
         }
 

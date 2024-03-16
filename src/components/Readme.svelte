@@ -14,8 +14,8 @@
         </p>
     </div>
     <div class="text-section">
-        <h2>Confirmed safety</h2>
-        <h3>Microsoft EV Code signing certificate</h3>
+        <h2>Confirmed Safety</h2>
+        <h3>Microsoft EV Code Signing Certificate</h3>
         <p>
             We have successfully acquired the Microsoft Windows EV Code Signing Certificate and we have
             signed the application with it. This proves that the application is from a <span class="hl">known
@@ -33,7 +33,7 @@
         </p>
     </div>
     <div class="text-section">
-        <h2><span class="hl">Claiming process</span></h2>
+        <h2><span class="hl">Claiming Process</span></h2>
         <p>
             In case there is a position available you can purchase it from the button “Purchase account”. After
             that you'll receive an email with your personal account setup details and the download link to the
@@ -55,22 +55,15 @@
             name Cyrbofi which is a combination of letters from the phrase “[C]r[y]pto a[rb]itrage
             [o]pportunity [fi]nder”.
         </p>
-    </div>
-
-    <div class="spinner-with-button-wrapper">
-        <PurchaseCta {position_available} {cfasl} {gkrlef} {purchase} colored={true}/>
+        <a href="https://demo.sirbofi.com/" target="_blank">
+            <button class="big-button colored">
+                <span>Try Free Demo</span>
+            </button>
+        </a>
     </div>
 </main>
 
 <script>
-    import PurchaseCta from "./widgets/PurchaseCta.svelte";
-
-    export let position_available = false;
-    export let cfasl = false;
-    export let gkrlef = (uid) => {
-    };
-    export let purchase = () => {
-    };
 </script>
 
 <style>
@@ -79,8 +72,8 @@
         font-size: 20px;
     }
 
-    a.inline {
-        color: var(--glow-green);
+    .big-button.colored {
+        margin-top: 60px;
     }
 
     .readme-text-container .spinner-with-button-wrapper {

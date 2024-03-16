@@ -2,36 +2,48 @@
     <div class="relative flex-row roadmap-container">
         <div class="flex-col checkpoints-container left">
             <PadWithArrow direction={"right"}>
-                <h2>The Rumors 11.2023</h2>
+                <h2>The Rumors Q4 2023</h2>
                 <ul>
-                    <li>First ever version of Sir Bofi platform available for windows and MacOS natively.</li>
-                    <li>Private premium accounts only</li>
-                    <li>Acquired <a target="_blank"
-                            href="https://signmycode.com/blog/what-is-ev-code-signing-certificate-how-does-it-work"
-                            class="inline"> Microsoft EV Code Signing Certificate</a></li>
-                    <li><a
-                            href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
-                            target="_blank" class="inline">$BOFI Token</a> Presale</li>
-                    <li>Private community & contests</li>
+                    <RoadmapListItem checked={true}>First ever version of Sir Bofi platform available for windows and
+                        MacOS natively.
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>Private premium accounts only</RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        Acquired <a target="_blank"
+                                    href="https://signmycode.com/blog/what-is-ev-code-signing-certificate-how-does-it-work"
+                                    class="inline"> Microsoft EV Code Signing Certificate</a>
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        <a
+                                href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
+                                target="_blank" class="inline">$BOFI Token</a> Presale
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>Private community & contests</RoadmapListItem>
                 </ul>
             </PadWithArrow>
             <PadWithArrow direction={"right"}>
-                <h2> 01.2023</h2>
+                <h2>Moving Online Q1 2024</h2>
                 <ul>
-                    <li>----</li>
-                    <li>First ever version of Sir Bofi platform available for windows and MacOS natively.</li>
-                    <li>Acquired Microsoft EV Code Signing Certificate</li>
-                    <li>Private community & contests</li>
+                    <RoadmapListItem checked={true}>Infrastructure planning</RoadmapListItem>
+                    <RoadmapListItem checked={true}>Business model development</RoadmapListItem>
+                    <RoadmapListItem checked={true}>Main product UX overhaul</RoadmapListItem>
+                    <RoadmapListItem checked={true}>Homepage additions</RoadmapListItem>
+                    <RoadmapListItem checked={true}>Sir Bofi private <a href="https://www.ibm.com/topics/api"
+                                                                        class="inline" target="_blank">
+                        API </a> release</RoadmapListItem>
                 </ul>
             </PadWithArrow>
-            <div class="coming-soon">
+            <div>
                 <PadWithArrow direction={"right"}>
-                    <h2>In progress</h2>
+                    <h2>Product Launch Q2 2024</h2>
                     <ul>
-                        <li>First ever version of Sir Bofi platform available for windows and MacOS natively.</li>
-                        <li>$BOFI Token launch</li>
-                        <li>Community building & contents</li>
-                        <li>Acquired Microsoft EV Code Signing Certificate</li>
+                        <RoadmapListItem checked={true}>DEXScreener project info listing</RoadmapListItem>
+                        <RoadmapListItem>WalletConnectV2 integration</RoadmapListItem>
+                        <RoadmapListItem>Bofi Platform Token Gating feature</RoadmapListItem>
+                        <RoadmapListItem>Subscription feature development</RoadmapListItem>
+                        <RoadmapListItem>Massive marketing campaign</RoadmapListItem>
+                        <RoadmapListItem>Press releases</RoadmapListItem>
+                        <RoadmapListItem>DEXTools Validation And Score</RoadmapListItem>
                     </ul>
                 </PadWithArrow>
             </div>
@@ -44,21 +56,44 @@
         <div class="flex-col checkpoints-container right">
             <div></div>
             <PadWithArrow direction={"left"}>
-                <h2>The launch 12.2023</h2>
+                <h2>Token Launch Q4 2023</h2>
                 <ul>
-                    <li><a
-                            href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
-                            target="_blank" class="inline">$BOFI token</a> launch</li>
-                    <li>Free demo version of the native Sir Bofi platform</li>
+                    <RoadmapListItem checked={true}>
+                        <a
+                                href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
+                                target="_blank" class="inline">$BOFI token</a> launch
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        Crypto industry partnerships
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        Sir Bofi web platform development started
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        Web platform demo version development
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        Potential $BOFI <a
+                            href="https://www.coingecko.com/learn/token-gating" target="_blank"
+                            class="inline">Token Gating</a> feature announced
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>
+                        <a href="https://www.ibm.com/topics/api" class="inline" target="_blank">
+                            API</a> development
+                    </RoadmapListItem>
                 </ul>
             </PadWithArrow>
             <PadWithArrow direction={"left"}>
-                <h2>Title 02.2024</h2>
+                <h2>Demo Launch Q1 2024</h2>
                 <ul>
-                    <li>Homepage overhaul</li>
-                    <li>Online demo application release</li>
-                    <li>Hiring additional developing resources</li>
-                    <li>New marketing campaign</li>
+                    <RoadmapListItem checked={true}>
+                        <a href="https://demo.sirbofi.com" target="_blank" class="inline">
+                            Web platform demo</a> release
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>Preparations for the marketing campaign</RoadmapListItem>
+                    <RoadmapListItem checked={true}>Hiring additional engineering & marketing resources
+                    </RoadmapListItem>
+                    <RoadmapListItem checked={true}>Community building</RoadmapListItem>
                 </ul>
             </PadWithArrow>
         </div>
@@ -67,6 +102,8 @@
 <script>
     import PadWithArrow from "./PadWithArrow.svelte";
     import {onMount} from "svelte";
+    import Checkbox from "./widgets/Checkbox.svelte";
+    import RoadmapListItem from "./widgets/RoadmapListItem.svelte";
 
     onMount(() => {
         const checkpoints = document.querySelector('.checkpoints-container');
@@ -74,7 +111,7 @@
             const timeline = document.querySelector('.timeline');
             const checkpointRect = checkpoints.getBoundingClientRect();
             const checkpointHeight = checkpointRect.height;
-            timeline.style.height = `${checkpointHeight+100}px`;
+            timeline.style.height = `${checkpointHeight + 100}px`;
         }
 
         // 3d stuff
@@ -96,16 +133,6 @@
 </script>
 <style>
 
-    a.inline {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        color: var(--glow-green);
-        transition: all 0.15s;
-    }
-
-    a.inline:hover {
-        filter: drop-shadow(0 0 4px var(--glow-green));
-    }
 
     .coming-soon {
         opacity: 0.5;
@@ -118,14 +145,12 @@
 
     h2 {
         font-size: 32px;
+        white-space: nowrap;
     }
 
     ul {
-        margin-left: 20px;
-    }
-
-    li {
-        margin: 4px 0;
+        list-style: none;
+        position: relative;
     }
 
     main {

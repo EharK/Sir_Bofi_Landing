@@ -6,7 +6,7 @@
         <div class="absolute bubble cryptos">
             9000+ Crypto-currencies
         </div>
-        <div class="absolute bubble pairs">
+        <div class="absolute bubble fastest">
             Fastest in the industry
         </div>
         <div class="first">
@@ -96,8 +96,8 @@
         transform: translateX(200px) translateY(250px) translateZ(20px);
     }
 
-    .bubble.pairs {
-        transform: translateX(100px) translateY(350px) translateZ(80px);
+    .bubble.fastest {
+        transform: translateX(100px) translateY(320px) translateZ(80px);
     }
 
 </style>

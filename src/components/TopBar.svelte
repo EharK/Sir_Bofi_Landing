@@ -31,7 +31,7 @@
             <img src="burger.svg" alt="">
         </div>
         <button class="colored cta">
-            Try demo
+            Try Free Demo
         </button>
     </div>
 </main>
@@ -50,7 +50,7 @@
                 'scroll',
                 () => {
                     const currentScroll = window.scrollY;
-                    if (currentScroll > lastScroll) {
+                    if (currentScroll-lastScroll > 0 && currentScroll > 700) {
                         topBar.style.top = '-100px';
                     } else {
                         if (window.innerWidth > 780) {
@@ -96,7 +96,7 @@
     .top-bar {
         position: fixed;
         background-color: hsla(0, 0%, 9%, 0);
-        backdrop-filter: blur(14px) brightness(0.5);
+        backdrop-filter: blur(14px) brightness(0.6);
         transition: top 0.3s;
         height: 80px;
         width: 80vw;

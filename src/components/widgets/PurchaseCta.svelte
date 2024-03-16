@@ -9,11 +9,11 @@
         {/if}
         {#if !position_available}
             <button class="{!cfasl ? '' : 'disabled'} big-button { colored ? 'colored' : 'transparent'}" on:click={() => gkrlef(1)}>
-                <span>Give me access</span>
+                <span>Give Me Access</span>
             </button>
         {:else}
             <button class="{!cfasl ? '' : 'disabled'} big-button { colored ? 'colored' : 'transparent'}" on:click={() => purchase()}>
-                <span>Purchase account</span>
+                <span>Purchase Account</span>
             </button>
         {/if}
         {#if spinner_order_reverse}
