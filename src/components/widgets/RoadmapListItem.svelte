@@ -16,6 +16,7 @@
         flex-direction: row;
         gap: 8px;
         margin: 8px 0;
+        font-size: 16px;
     }
 
     .checkbox-wrapper {

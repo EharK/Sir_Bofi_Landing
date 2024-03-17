@@ -112,6 +112,12 @@
             </a>
         </div>
     </div>
+    <div class="secondary-container">
+        <div class="col center">
+            <h1>Community</h1>
+            <CommunityEvents/>
+        </div>
+    </div>
     <div class="secondary-container relative">
         <Readme/>
         <div class="back-up-button-wrapper">
@@ -147,6 +153,7 @@
     import TopBar from "./components/TopBar.svelte";
     import Roadmap from "./components/Roadmap.svelte";
     import {onMount} from "svelte";
+    import CommunityEvents from "./components/CommunityEvents.svelte";
 
     let cfasl = false;
     let position_available = false;
@@ -231,7 +238,9 @@
         background: linear-gradient(-45deg, #0f1a0f 0%, #0d0d0d 100%);
         color: var(--slight) !important;
         padding: 40px 0;
+        height: 200px;
         justify-content: space-around;
+        align-items: flex-start !important;
     }
 
     .overlay-items-container {
@@ -456,6 +465,7 @@
         font-size: 48px;
         margin-bottom: 60px;
     }
+
     p {
         font-size: 20px;
         line-height: 1.5;

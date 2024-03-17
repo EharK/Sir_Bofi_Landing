@@ -30,7 +30,8 @@
                     <RoadmapListItem checked={true}>Homepage additions</RoadmapListItem>
                     <RoadmapListItem checked={true}>Sir Bofi private <a href="https://www.ibm.com/topics/api"
                                                                         class="inline" target="_blank">
-                        API </a> release</RoadmapListItem>
+                        API </a> release
+                    </RoadmapListItem>
                 </ul>
             </PadWithArrow>
             <div>
@@ -111,7 +112,7 @@
             const timeline = document.querySelector('.timeline');
             const checkpointRect = checkpoints.getBoundingClientRect();
             const checkpointHeight = checkpointRect.height;
-            timeline.style.height = `${checkpointHeight + 100}px`;
+            timeline.style.height = `${checkpointHeight + 200}px`;
         }
 
         // 3d stuff
@@ -159,11 +160,9 @@
 
     .timeline {
         width: 2px;
-        height: 100%;
         background: linear-gradient(to bottom, var(--dark), var(--glow-green), var(--dark));
         z-index: -1;
         margin: 0 8px;
-        min-height: 1000px;
     }
 
     .checkpoints-container {
@@ -185,6 +184,39 @@
 
     .checkpoints-container :global(.pad p) {
         font-size: 16px;
+    }
+
+    @media screen and (max-width: 1280px) {
+        h2 {
+            font-size: clamp(18px, 3vw, 20px);
+        }
+
+        .checkpoints-container :global(.pad) {
+            text-align: left;
+            max-width: 360px;
+        }
+
+        .checkpoints-container :global(.pad li) {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        .checkpoints-container {
+            transform: translateX(0);
+            align-items: center;
+            gap: 300px;
+        }
+
+        .checkpoints-container.left {
+            transform: translateX(0);
+            align-items: center;
+            gap: 360px;
+        }
+
+        .checkpoints-container :global(.arrow-container) {
+            display: none;
+        }
     }
 
 </style>

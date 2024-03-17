@@ -1,0 +1,48 @@
+<main>
+    <div class="banners-container">
+        {#each events as event}
+            <EventBanner
+                    src={event.src}
+                    title={event.title}
+                    text={event.text}
+                    ongoing={!!event.ongoing}
+                    href={event.href}
+            />
+        {/each}
+    </div>
+</main>
+
+<script>
+    import EventBanner from "./EventBanner.svelte";
+
+    const events = [
+        {
+            src: "/banners/reddit-post-contest.png",
+            title: "Reddit Post Contest",
+            text: "Post a screenshot of your favorite moment in the game and win a prize!",
+            ongoing: true,
+            href: "https://www.reddit.com/r/SirBofiOfficial/comments/1bgc7im/the_reddit_contest_with_a_prize_pool_of_500_has/"
+        },
+        {
+            src: "./banners/tg-invite-contest.png",
+            title: "Telegram Invite Contest",
+            text: "Invite your friends to our Telegram group and win a prize!",
+            href: "https://t.me/SirBofiportal"
+        }
+    ]
+</script>
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banners-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+</style>

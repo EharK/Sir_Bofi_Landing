@@ -56,6 +56,10 @@ a.inline:hover {
     filter: drop-shadow(0 0 4px var(--green));
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 .icon {
     width: 28px;
     height: 28px;

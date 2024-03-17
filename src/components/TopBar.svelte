@@ -23,7 +23,7 @@
                     <button class="bones">
                         <img src="/icons/dexscreener.svg" width="16px" height="16px"
                              alt="dexscreener" class="dexscreener-icon">
-                        Chart
+                        Token
                     </button>
                 </a>
                 <a href="https://rumvessel.gitbook.io/sir-bofi">

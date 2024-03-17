@@ -1,4 +1,4 @@
-<main>
+<main class="arrow-container">
     <div class="container {direction}">
         <div class="line {direction}"></div>
         <div class="head"></div>
