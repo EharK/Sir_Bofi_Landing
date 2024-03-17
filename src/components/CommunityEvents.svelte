@@ -43,6 +43,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         margin-bottom: 80px;
     }

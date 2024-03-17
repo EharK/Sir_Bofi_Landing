@@ -31,6 +31,8 @@
 <style>
 
     .main-container {
+        max-width: 700px;
+        min-width: 200px;
         display: flex;
         flex-direction: column;
         padding: 20px 20px 40px;
@@ -70,7 +72,19 @@
     }
 
     img {
-        max-width: 600px;
         border-radius: 20px;
+    }
+
+    @media screen and (max-width: 1600px){
+        .main-container {
+            width: 500px;
+        }
+    }
+
+    @media screen and (max-width: 1200px){
+        .main-container {
+            width: 400px;
+            padding: 10px 10px 20px;
+        }
     }
 </style>
