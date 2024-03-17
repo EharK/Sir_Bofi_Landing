@@ -87,4 +87,10 @@
             padding: 10px 10px 20px;
         }
     }
+
+    @media screen and (max-width: 500px){
+        .main-container {
+            width: 300px;
+        }
+    }
 </style>
