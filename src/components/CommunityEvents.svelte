@@ -21,7 +21,7 @@
             title: "Reddit Post Contest",
             text: "Post a screenshot of your favorite moment in the game and win a prize!",
             ongoing: true,
-            href: "https://www.reddit.com/r/SirBofiOfficial/comments/1bgc7im/the_reddit_contest_with_a_prize_pool_of_500_has/"
+            href: "https://www.reddit.com/r/BofiCommunity/"
         },
         {
             src: "./banners/tg-invite-contest.png",
@@ -44,5 +44,6 @@
         flex-direction: row;
         align-items: center;
         gap: 40px;
+        margin-bottom: 80px;
     }
 </style>

@@ -39,9 +39,11 @@
                     <h2>Product Launch Q2 2024</h2>
                     <ul>
                         <RoadmapListItem checked={true}>DEXScreener project info listing</RoadmapListItem>
+                        <RoadmapListItem checked={true}>Homepage overhaul</RoadmapListItem>
                         <RoadmapListItem>WalletConnectV2 integration</RoadmapListItem>
                         <RoadmapListItem>Bofi Platform Token Gating feature</RoadmapListItem>
-                        <RoadmapListItem>Subscription feature development</RoadmapListItem>
+                        <RoadmapListItem>Subscription feature</RoadmapListItem>
+                        <RoadmapListItem>Sir Bofi Web Platform launch</RoadmapListItem>
                         <RoadmapListItem>Massive marketing campaign</RoadmapListItem>
                         <RoadmapListItem>Press releases</RoadmapListItem>
                         <RoadmapListItem>DEXTools Validation And Score</RoadmapListItem>
@@ -206,6 +208,7 @@
             transform: translateX(0);
             align-items: center;
             gap: 300px;
+            pointer-events: none;
         }
 
         .checkpoints-container.left {

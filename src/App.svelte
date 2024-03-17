@@ -25,11 +25,6 @@
                 <Director/>
             </div>
         </div>
-        <div class="ambient-wrapper">
-            <div class="ambient">
-                @
-            </div>
-        </div>
     </div>
     <div class="secondary-container dark">
         <div class="col center" id="demonstration">
@@ -72,7 +67,6 @@
                 </button>
             </a>
         </div>
-        <div>-100€ coupon code: <span class="text-green">IKnowWhatImDoing</span></div>
         <hr class="big">
         <div id="tokenomics" class="section tokenomics-section">
             <h1>$BOFI Tokenomics</h1>
@@ -104,7 +98,7 @@
                     <span>Etherscan</span>
                 </button>
             </a>
-            <a href="https://demo.sirbofi.com/" target="_blank">
+            <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58" target="_blank">
                 <button class="big-button colored">
                     <img src="/icons/dexscreener.svg" width="24" height="24" alt="" class="invert">
                     <span>Chart</span>
@@ -112,9 +106,12 @@
             </a>
         </div>
     </div>
-    <div class="secondary-container">
+    <div class="secondary-container community-section" id="community">
         <div class="col center">
-            <h1>Community</h1>
+            <div class="flex-col align-center title-and-socials">
+                <h1>Community</h1>
+                <SocialsList/>
+            </div>
             <CommunityEvents/>
         </div>
     </div>
@@ -126,21 +123,8 @@
             </a>
         </div>
     </div>
-    <div class="base-row strict footer-container">
-        <div class="flex-row footer-icons-list">
-            <a href="https://t.me/SirBofiportal" target="_blank">
-                <img src="icons/telegram.svg" class="icon rise-on-hover" alt="Telegram">
-            </a>
-            <a href="https://twitter.com/sir_bofi" target="_blank">
-                <img src="icons/xdotcom.svg" class="icon rise-on-hover" alt="Twitter / x.com">
-            </a>
-            <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58" target="_blank">
-                <img src="icons/dexscreener.svg" class="icon rise-on-hover" alt="DEXScreener">
-            </a>
-            <a href="https://www.reddit.com/r/SirBofiOfficial/" target="_blank">
-                <img src="icons/reddit.svg" class="icon rise-on-hover" alt="Reddit">
-            </a>
-        </div>
+    <div class="base-row footer-container">
+        <SocialsList/>
         <p class="xs-text">
             © {current_year} RumVessel. All rights reserved.
         </p>
@@ -154,6 +138,7 @@
     import Roadmap from "./components/Roadmap.svelte";
     import {onMount} from "svelte";
     import CommunityEvents from "./components/CommunityEvents.svelte";
+    import SocialsList from "./components/SocialsList.svelte";
 
     let cfasl = false;
     let position_available = false;
@@ -211,10 +196,6 @@
         margin-top: 20px;
     }
 
-    .buttons-wrapper div {
-        margin: 0;
-    }
-
     .hl {
         background-color: var(--highlight);
         border-radius: 4px;
@@ -232,6 +213,14 @@
 
     .xs-text {
         font-size: 12px;
+    }
+
+    .community-section h1 {
+        margin-bottom: 0;
+    }
+
+    .community-section .title-and-socials {
+        margin-bottom: 60px;
     }
 
     .footer-container {
@@ -263,31 +252,6 @@
         margin: -20px 0 20px 0;
         background: var(--glow-green);
         filter: grayscale(0.6);
-    }
-
-    .ambient-wrapper {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: inherit;
-        top: 0;
-        overflow: hidden;
-        box-sizing: border-box;
-        z-index: 0;
-    }
-
-    .ambient {
-        user-select: none;
-        font-size: 4080px;
-        margin-top: -1200px;
-        animation: rotate 50s linear infinite;
-        line-height: 1.2;
-        filter: blur(40px);
-        opacity: 0.5;
-        font-weight: 400;
-        color: black;
     }
 
     @keyframes rotate {
@@ -491,12 +455,6 @@
         font-weight: 600;
     }
 
-    .base-row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
     .tokenomics-text-container {
         display: flex;
         flex-direction: column;
@@ -555,14 +513,6 @@
         min-width: 0;
     }
 
-    .footer-icons-list {
-        gap: 20px;
-    }
-
-    .footer-icons-list .icon:hover {
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-    }
-
     @media screen and (max-width: 1280px) {
         .video-container {
             min-width: 80%;
@@ -596,10 +546,6 @@
             flex-direction: column;
         }
 
-        .base-row.main-points-row {
-            width: 100%;
-        }
-
         .main-points-section h1, h2, h3 {
             text-align: center !important;
         }
@@ -611,11 +557,6 @@
         .tokenomics-chart {
             max-width: calc(100% - 24px);
             margin: 0;
-        }
-
-        .base-row.main-points-row {
-            max-width: 500px;
-            justify-content: space-around;
         }
 
         .main-points-section .section {
@@ -687,12 +628,6 @@
 
         .landing-title-container {
             margin: 0 0 100px 0;
-        }
-
-        .spinner-with-button-wrapper {
-            flex-direction: column;
-            justify-content: center;
-            max-height: min-content;
         }
 
         .secondary-container {

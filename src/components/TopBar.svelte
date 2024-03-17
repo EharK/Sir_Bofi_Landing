@@ -10,26 +10,35 @@
             <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
                 <a href="#roadmap">
                     <button class="bones">
+                        <img class="icon" src="/icons/map.svg" alt="roadmap">
                         Roadmap
                     </button>
                 </a>
                 <a href="#tokenomics">
                     <button class="bones relative">
+                        <img class="icon" src="/icons/piechart.svg" alt="tokenomics">
                         Tokenomics
                     </button>
                 </a>
                 <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
                    target="_blank">
                     <button class="bones">
-                        <img src="/icons/dexscreener.svg" width="16px" height="16px"
-                             alt="dexscreener" class="dexscreener-icon">
+                        <img class="icon dexscreener-icon" src="/icons/dexscreener.svg"
+                             alt="dexscreener">
                         Token
                     </button>
                 </a>
-                <a href="https://rumvessel.gitbook.io/sir-bofi">
-                    <button class="bones">
-                        <img src="/icons/gitbook.png" width="16px" height="16px" alt="gitbook" class="gitbook-icon">
-                        Gitbook
+<!--                <a href="https://rumvessel.gitbook.io/sir-bofi"-->
+<!--                   target="_blank">-->
+<!--                    <button class="bones">-->
+<!--                        <img src="/icons/gitbook.png" alt="gitbook" class="gitbook-icon">-->
+<!--                        Documentation-->
+<!--                    </button>-->
+<!--                </a>-->
+                <a href="#community">
+                    <button class="bones relative">
+                        <img class="icon" src="/icons/reddit.svg" alt="community">
+                        Community
                     </button>
                 </a>
             </div>
@@ -39,7 +48,7 @@
              role="button" tabindex="0">
             <img src="burger.svg" alt="">
         </div>
-        <button class="colored cta">
+        <button class="big-button colored cta">
             Try Free Demo
         </button>
     </div>
@@ -60,10 +69,10 @@
                 'scroll',
                 () => {
                     const currentScroll = window.scrollY;
-                    if (currentScroll - lastScroll > 0 && currentScroll > 700) {
+                    if (currentScroll - lastScroll > 0 && currentScroll > 700 && window.innerWidth > 900) {
                         topBar.style.top = '-100px';
                     } else {
-                        if (window.innerWidth > 780) {
+                        if (window.innerWidth > 900) {
                             topBar.style.top = '20px';
                         } else {
                             topBar.style.top = '0';
@@ -75,7 +84,7 @@
             window.addEventListener(
                 'resize',
                 () => {
-                    if (window.innerWidth < 780) {
+                    if (window.innerWidth < 900) {
                         topBar.style.top = '0';
                     } else {
                         topBar.style.top = '20px';
@@ -88,17 +97,19 @@
 
 <style>
 
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
     .gitbook-icon {
         filter: invert(1);
     }
 
-    a, button {
-        height: 100%;
-    }
-
-    button {
+    a button {
         display: flex;
         align-items: center;
+        font-size: clamp(12px, 1.2vw, 16px);
     }
 
     .dexscreener-icon {
@@ -107,8 +118,7 @@
 
     button.cta {
         position: absolute;
-        right: 40px;
-        height: 40px;
+        right: 20px;
     }
 
     main {
@@ -163,20 +173,20 @@
         cursor: pointer;
     }
 
-    @media screen and (max-width: 1300px) {
+    @media screen and (max-width: 1360px) {
         .top-bar {
             width: 90vw;
         }
     }
 
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 1180px) {
 
         .top-bar .nav .nav-items { /* Do net delete - is actually used */
             gap: 20px;
         }
     }
 
-    @media screen and (max-width: 780px) {
+    @media screen and (max-width: 900px) {
         .burger {
             visibility: visible;
             margin-right: 20px;

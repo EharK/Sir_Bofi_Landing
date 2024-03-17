@@ -60,6 +60,12 @@ a.inline:hover {
     cursor: pointer;
 }
 
+.base-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .icon {
     width: 28px;
     height: 28px;
@@ -230,6 +236,10 @@ button:active {
 .flex-row {
     display: flex;
     flex-direction: row;
+}
+
+.align-center {
+    align-items: center;
 }
 
 .gap-8 {

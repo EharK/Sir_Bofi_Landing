@@ -4,8 +4,12 @@
         <h2>{title}</h2>
         <p>{text}</p>
         {#if ongoing}
-            <div class="ongoing-tag">
+            <div class="tag ongoing">
                 <span>Active</span>
+            </div>
+        {:else}
+            <div class="tag ended">
+                <span>Ended</span>
             </div>
         {/if}
     </div>
@@ -40,11 +44,10 @@
         background-color: rgba(255, 255, 255, 0.12);
     }
 
-    .ongoing-tag {
+    .tag {
         position: absolute;
         top: -15px;
         right: -10px;
-        background-color: var(--green);
         padding: 5px 20px;
         border-radius: 20px;
         color: var(--dark);
@@ -53,7 +56,16 @@
         transition: transform 0.15s;
     }
 
-    main:hover .ongoing-tag {
+    .tag.ongoing {
+        background-color: var(--green);
+    }
+
+    .tag.ended {
+        background-color: var(--sdark);
+        color: var(--light);
+    }
+
+    main:hover .tag {
         transform: translateY(-6px);
     }
 
