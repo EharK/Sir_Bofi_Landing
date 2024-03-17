@@ -1,5 +1,5 @@
 <main class="checkbox-wrapper" style="--size: {iconSize}px">
-    <img src="/icons/checkbox{checked ? '-checked' : ''}.svg" alt="checkbox">
+    <img src="icons/checkbox{checked ? '-checked' : ''}.svg" alt="checkbox">
 </main>
 
 <script>

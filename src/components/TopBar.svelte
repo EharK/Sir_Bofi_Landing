@@ -10,20 +10,20 @@
             <div class={"nav-items" + (phoneNavActive ? ' open' : '')}>
                 <a href="#roadmap">
                     <button class="bones">
-                        <img class="icon" src="/icons/map.svg" alt="roadmap">
+                        <img class="icon" src="icons/map.svg" alt="roadmap">
                         Roadmap
                     </button>
                 </a>
                 <a href="#tokenomics">
                     <button class="bones relative">
-                        <img class="icon" src="/icons/piechart.svg" alt="tokenomics">
+                        <img class="icon" src="icons/piechart.svg" alt="tokenomics">
                         Tokenomics
                     </button>
                 </a>
                 <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58"
                    target="_blank">
                     <button class="bones">
-                        <img class="icon dexscreener-icon" src="/icons/dexscreener.svg"
+                        <img class="icon dexscreener-icon" src="icons/dexscreener.svg"
                              alt="dexscreener">
                         Token
                     </button>
@@ -31,13 +31,13 @@
 <!--                <a href="https://rumvessel.gitbook.io/sir-bofi"-->
 <!--                   target="_blank">-->
 <!--                    <button class="bones">-->
-<!--                        <img src="/icons/gitbook.png" alt="gitbook" class="gitbook-icon">-->
+<!--                        <img src="icons/gitbook.png" alt="gitbook" class="gitbook-icon">-->
 <!--                        Documentation-->
 <!--                    </button>-->
 <!--                </a>-->
                 <a href="#community">
                     <button class="bones relative">
-                        <img class="icon" src="/icons/reddit.svg" alt="community">
+                        <img class="icon" src="icons/reddit.svg" alt="community">
                         Community
                     </button>
                 </a>
@@ -56,7 +56,6 @@
 
 <script>
     import {onMount} from "svelte";
-    import Pad from "./widgets/Pad.svelte";
 
     export let phoneNavActive;
     export let togglePhoneNavMenu;

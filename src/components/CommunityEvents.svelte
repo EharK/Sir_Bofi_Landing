@@ -17,14 +17,14 @@
 
     const events = [
         {
-            src: "/banners/reddit-post-contest.png",
+            src: "banners/reddit-post-contest.png",
             title: "Reddit Post Contest",
             text: "Post a screenshot of your favorite moment in the game and win a prize!",
             ongoing: true,
             href: "https://www.reddit.com/r/BofiCommunity/"
         },
         {
-            src: "./banners/tg-invite-contest.png",
+            src: "banners/tg-invite-contest.png",
             title: "Telegram Invite Contest",
             text: "Invite your friends to our Telegram group and win a prize!",
             href: "https://t.me/SirBofiportal"

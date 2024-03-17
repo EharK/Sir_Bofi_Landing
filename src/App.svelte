@@ -76,14 +76,14 @@
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
                             <h2>Initial Utilities</h2>
-                            <img class="arrow-svg" src="/arrow.svg" alt="arrow">
+                            <img class="arrow-svg" src="./arrow.svg" alt="arrow">
                         </div>
                         <p class="tokenomics-text">Staking - Profit share - Buy Back</p>
                     </div>
                     <div class="tokenomics-text-container">
                         <div class="utilities-title-wrapper">
                             <h2>In Progress</h2>
-                            <img class="arrow-svg" src="/arrow.svg" alt="arrow">
+                            <img class="arrow-svg" src="./arrow.svg" alt="arrow">
                         </div>
                         <p class="tokenomics-text">Token Gated Access</p>
                     </div>
@@ -94,13 +94,13 @@
         <div class="buttons-wrapper">
             <a href="https://etherscan.io/token/0xe3374f14be081eae24e39e18360422b7aa769859" target="_blank">
                 <button class="big-button transparent">
-                    <img src="/icons/etherscan.svg" width="24" height="24" alt="etherscan">
+                    <img src="./icons/etherscan.svg" width="24" height="24" alt="etherscan">
                     <span>Etherscan</span>
                 </button>
             </a>
             <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58" target="_blank">
                 <button class="big-button colored">
-                    <img src="/icons/dexscreener.svg" width="24" height="24" alt="" class="invert">
+                    <img src="./icons/dexscreener.svg" width="24" height="24" alt="" class="invert">
                     <span>Chart</span>
                 </button>
             </a>
