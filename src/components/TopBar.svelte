@@ -37,7 +37,7 @@
 <!--                </a>-->
                 <a href="#community">
                     <button class="bones relative">
-                        <img class="icon" src="icons/reddit.svg" alt="community">
+                        <img class="icon" src="icons/telegram.svg" alt="community">
                         Community
                     </button>
                 </a>

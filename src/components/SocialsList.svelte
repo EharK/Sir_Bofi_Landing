@@ -8,9 +8,9 @@
     <a href="https://dexscreener.com/ethereum/0x13147616fd3b2369b31a55a3752074b9f3589b58" target="_blank">
         <img src="icons/dexscreener.svg" class="icon rise-on-hover" alt="DEXScreener">
     </a>
-    <a href="https://www.reddit.com/r/BofiCommunity/" target="_blank">
-        <img src="icons/reddit.svg" class="icon rise-on-hover" alt="Reddit">
-    </a>
+<!--    <a href="https://www.reddit.com/r/BofiCommunity/" target="_blank">-->
+<!--        <img src="icons/reddit.svg" class="icon rise-on-hover" alt="Reddit">-->
+<!--    </a>-->
 </div>
 
 <script>

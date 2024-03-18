@@ -19,9 +19,9 @@
         {
             src: "banners/reddit-post-contest.png",
             title: "Reddit Post Contest",
-            text: "Post a screenshot of your favorite moment in the game and win a prize!",
+            text: "Post a link to your post on our Telegram group and win a prize!",
             ongoing: true,
-            href: "https://www.reddit.com/r/BofiCommunity/"
+            href: "https://t.me/SirBofiportal"
         },
         {
             src: "banners/tg-invite-contest.png",
