@@ -15,7 +15,7 @@
                     </button>
                 </a>
                 <a href="#tokenomics">
-                    <button class="bones relative">
+                    <button class="bones">
                         <img class="icon" src="icons/piechart.svg" alt="tokenomics">
                         Tokenomics
                     </button>
@@ -28,13 +28,13 @@
                         Token
                     </button>
                 </a>
-<!--                <a href="https://rumvessel.gitbook.io/sir-bofi"-->
-<!--                   target="_blank">-->
-<!--                    <button class="bones">-->
-<!--                        <img src="icons/gitbook.png" alt="gitbook" class="gitbook-icon">-->
-<!--                        Documentation-->
-<!--                    </button>-->
-<!--                </a>-->
+                <!--                <a href="https://rumvessel.gitbook.io/sir-bofi"-->
+                <!--                   target="_blank">-->
+                <!--                    <button class="bones">-->
+                <!--                        <img src="icons/gitbook.png" alt="gitbook" class="gitbook-icon">-->
+                <!--                        Documentation-->
+                <!--                    </button>-->
+                <!--                </a>-->
                 <a href="#community">
                     <button class="bones relative">
                         <img class="icon" src="icons/telegram.svg" alt="community">
@@ -90,6 +90,9 @@
                     }
                 }
             )
+            if (window.innerWidth < 900) {
+                topBar.style.top = '0';
+            }
         }
     );
 </script>
@@ -129,7 +132,7 @@
         position: fixed;
         background-color: hsla(0, 0%, 9%, 0);
         backdrop-filter: blur(14px) brightness(0.6);
-        transition: top 0.3s;
+        transition: top 0.5s;
         height: 80px;
         width: 80vw;
         z-index: 99;
@@ -140,6 +143,8 @@
         color: var(--slight);
         padding: 0 40px;
         border-radius: 8px;
+        outline: 1px solid black;
+        box-shadow: 5px 4px 20px 0 rgba(0, 0, 0, 0.2);
         top: 20px;
     }
 
@@ -148,6 +153,13 @@
         align-items: center;
         flex-direction: row;
         gap: 60px;
+    }
+
+    @media screen and (min-width: 900px) {
+        .nav, .nav-items, .nav-items button,
+        .nav-items a {
+            height: 100%;
+        }
     }
 
     .logo.navbar {
@@ -199,6 +211,7 @@
             padding: 0 20px;
             width: 100%;
             overflow: visible;
+            border-radius: 0;
         }
 
         .top-bar .nav .nav-items { /* dont delete */

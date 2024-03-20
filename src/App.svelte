@@ -2,30 +2,7 @@
     <div class="overlay-items-container">
         <TopBar {phoneNavActive} {togglePhoneNavMenu}/>
     </div>
-    <div id="landing" class="primary-container">
-        <div class="primary-container-content-wrapper">
-            <div class="landing-title-container">
-                <h1 class="xxl">
-                    Find crypto arbitrage possibilities in <span class="hl green">seconds</span>
-                </h1>
-                <div class="buttons-wrapper">
-                    <a href="#demonstration">
-                        <button class="big-button transparent">
-                            Tell Me More
-                        </button>
-                    </a>
-                    <a href="https://demo.sirbofi.com/" target="_blank">
-                        <button class="big-button colored">
-                            <span>Try Free Demo</span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="landing-fidget-container">
-                <Director/>
-            </div>
-        </div>
-    </div>
+    <Landing/>
     <div class="secondary-container dark">
         <div class="col center" id="demonstration">
             <h1>See How It Works</h1>
@@ -50,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="secondary-container main-points-section">
+    <div class="secondary-container roadmap-and-tokenomics-section">
         <div class="w-full" id="roadmap">
             <h1>Roadmap</h1>
             <Roadmap/>
@@ -139,6 +116,7 @@
     import {onMount} from "svelte";
     import CommunityEvents from "./components/CommunityEvents.svelte";
     import SocialsList from "./components/SocialsList.svelte";
+    import Landing from "./components/Landing.svelte";
 
     let cfasl = false;
     let position_available = false;
@@ -194,21 +172,6 @@
         flex-direction: row;
         gap: 10px;
         margin-top: 20px;
-    }
-
-    .hl {
-        background-color: var(--highlight);
-        border-radius: 4px;
-        padding: 0 5px;
-        margin-left: -5px;
-    }
-
-    .hl.green {
-        background-color: var(--ghighlight);
-    }
-
-    .text-green {
-        color: var(--green);
     }
 
     .xs-text {
@@ -338,42 +301,6 @@
         aspect-ratio: 16/9;
     }
 
-    .primary-container {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        box-sizing: border-box;
-        flex-direction: column;
-        justify-content: center;
-        background-size: cover;
-        z-index: 10;
-    }
-
-    .primary-container :not(.ambient-wrapper) {
-        z-index: 10;
-    }
-
-    .primary-container-content-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-        max-width: 1720px;
-        width: 100%;
-    }
-
-    .primary-container h1 {
-        color: var(--light);
-    }
-
-    .landing-fidget-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 3;
-    }
 
     .secondary-container.dark {
         background: transparent;
@@ -398,15 +325,6 @@
         text-align: center;
     }
 
-    .landing-title-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        max-width: 50vw;
-        margin: 0 0 100px 5vw;
-        flex: 6;
-    }
-
     .section {
         width: 100%;
         display: flex;
@@ -414,45 +332,9 @@
         align-items: center;
     }
 
-    .main-points-section {
+    .roadmap-and-tokenomics-section {
         background: linear-gradient(-45deg, rgb(26, 26, 26) 0%, rgba(13, 13, 13, 0.2) 100%);
-        color: var(--slight) !important;
         padding-bottom: 200px !important;
-    }
-
-    .main-points-section h1 {
-        font-size: clamp(48px, 5vw, 75px) !important;
-        margin-bottom: 100px;
-    }
-
-    .main-points-section h2 {
-        font-size: 48px;
-        margin-bottom: 60px;
-    }
-
-    p {
-        font-size: 20px;
-        line-height: 1.5;
-        text-align: justify;
-    }
-
-    h1 {
-        justify-self: center;
-        font-size: clamp(40px, 4vw, 80px) !important;
-        font-weight: 700;
-        margin-bottom: 60px;
-    }
-
-    h1.xxl {
-        font-size: clamp(24px, 4vw, 80px) !important;
-        font-weight: 700;
-        margin-bottom: 0;
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 64px;
-        font-weight: 600;
     }
 
     .tokenomics-text-container {
@@ -477,6 +359,10 @@
         transform: translateX(10px);
     }
 
+    .tokenomics-text {
+        text-align: start;
+    }
+
     .tokenomics-row {
         width: 100%;
         justify-content: center;
@@ -496,13 +382,11 @@
     .tokenomics-row .utilities-title-wrapper {
         display: flex;
         flex-direction: row;
-        align-items: center;
         margin-bottom: 10px;
         gap: 20px;
     }
 
     .tokenomics-row h2 {
-        font-size: clamp(36px, 3vw, 48px) !important;
         white-space: nowrap;
     }
 
@@ -516,12 +400,6 @@
     @media screen and (max-width: 1280px) {
         .video-container {
             min-width: 80%;
-        }
-
-        .primary-container-content-wrapper {
-            flex-direction: column;
-            gap: 100px;
-            padding: 30vh 0 20vh;
         }
     }
 
@@ -538,53 +416,30 @@
 
     @media screen and (max-width: 960px) {
 
-        .primary-container {
-            padding: 5vh 20px 0 20px;
-        }
-
         .base-row {
             flex-direction: column;
         }
 
-        .main-points-section h1, h2, h3 {
-            text-align: center !important;
-        }
-
-        .main-points-section .section {
-            padding: 80px 5px 0 5px;
-        }
-
         .tokenomics-chart {
-            max-width: calc(100% - 24px);
-            margin: 0;
+            max-width: 75%;
+            margin-left: -2rem;
         }
 
-        .main-points-section .section {
+        .roadmap-and-tokenomics-section .section {
             padding: 40px 5px;
         }
 
         .tokenomics-row {
-            width: 100%;
-            justify-content: center;
+            width: 94%;
             gap: 100px;
         }
 
         .tokenomics-row .utilities-title-wrapper {
-            flex-direction: column;
+            gap: 10px;
         }
 
         .arrow-svg {
-            transform: rotate(90deg);
-            margin-top: -20px;
             width: 24px;
-        }
-
-        p.tokenomics-text {
-            text-align: center !important;
-        }
-
-        .tokenomics-section {
-            margin-top: -100px;
         }
 
         .video-container {
@@ -594,25 +449,12 @@
 
     @media screen and (max-width: 700px) {
 
-        .main-points-section h3 {
-            margin-bottom: 16px;
-        }
-
         hr.big {
             display: none;
         }
 
         .buttons-wrapper {
             justify-content: center;
-        }
-
-        .primary-container-content-wrapper {
-            justify-content: center;
-            text-align: center;
-        }
-
-        .landing-fidget-container {
-            display: none;
         }
     }
 
@@ -624,10 +466,6 @@
 
         .video-container {
             min-width: 100%;
-        }
-
-        .landing-title-container {
-            margin: 0 0 100px 0;
         }
 
         .secondary-container {
@@ -652,14 +490,6 @@
         .back-up-button-wrapper {
             padding: 10px 20px;
         }
-    }
-
-    @media screen and (max-height: 900px) {
-
-        .primary-container {
-            padding: 5vh 0 0 0;
-        }
-
     }
 
 </style>

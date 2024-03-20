@@ -1,7 +1,7 @@
 <main>
     <div class="main-container relative {href ? 'clickable' : ''}" aria-hidden="true" on:click={()=>{goTo(href)}}>
         <img src={src} alt={title}/>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{text}</p>
         {#if ongoing}
             <div class="tag ongoing">

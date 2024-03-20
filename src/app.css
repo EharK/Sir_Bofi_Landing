@@ -107,7 +107,7 @@ button {
     background-color: transparent;
     color: var(--light);
     border-radius: 8px;
-    padding: 8px 24px;
+    padding: .8rem 2.4rem;
     transition: all 0.15s ease-in-out;
     user-select: none;
     display: flex;
@@ -123,7 +123,7 @@ button:hover {
 }
 
 button.big-button {
-    padding: 16px 32px;
+    padding: 1em 2em;
     font-size: clamp(12px, 2vw, 16px);
 }
 
@@ -190,6 +190,24 @@ button.round {
 button:active {
     opacity: 0.8;
     cursor: default;
+}
+
+p {
+    font-size: clamp(12px, 3vw, 18px);
+    line-height: 1.5;
+    text-align: justify;
+}
+
+h1 {
+    justify-self: center;
+    font-size: clamp(36px, 4vw, 80px);
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: clamp(28px, 3vw, 48px);
+    font-weight: 600;
 }
 
 .disabled {

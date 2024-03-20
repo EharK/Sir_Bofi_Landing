@@ -62,7 +62,7 @@
     }
 
     p {
-        font-size: 20px;
+        font-size: clamp(12px, 1.8vw, 18px);
     }
 
     .big-button.colored {

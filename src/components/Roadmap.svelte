@@ -123,7 +123,7 @@
         fidget.parentElement.style.perspective = '2000px';
         fidget.style.transformStyle = 'preserve-3d';
         window.addEventListener('mousemove', (e) => {
-            const x = (windowWidth / 2 - e.clientX) / 400;
+            const x = (windowWidth / 2 - e.clientX) / 200;
             fidget.style.transform = `rotateY(${x}deg)`;
         });
         window.addEventListener('resize', () => {
@@ -184,10 +184,6 @@
         max-width: 500px;
     }
 
-    .checkpoints-container :global(.pad p) {
-        font-size: 16px;
-    }
-
     @media screen and (max-width: 1280px) {
         h2 {
             font-size: clamp(18px, 3vw, 20px);
@@ -199,16 +195,26 @@
         }
 
         .checkpoints-container :global(.pad li) {
-            font-size: 12px;
+            font-size: 14px;
         }
     }
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 900px) {
         .checkpoints-container {
             transform: translateX(0);
             align-items: center;
             gap: 300px;
             pointer-events: none;
+        }
+
+        .checkpoints-container :global(.pad) {
+            text-align: left;
+            width: 95vw;
+            padding: 20px;
+        }
+
+        .checkpoints-container :global(.pad li) {
+            font-size: 12px;
         }
 
         .checkpoints-container.left {
