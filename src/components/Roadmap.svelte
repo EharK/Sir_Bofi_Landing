@@ -211,6 +211,11 @@
             text-align: left;
             width: 95vw;
             padding: 20px;
+            pointer-events: all;
+        }
+
+        .checkpoints-container :global(.pad:hover) {
+            background-color: var(--dark);
         }
 
         .checkpoints-container :global(.pad li) {

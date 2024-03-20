@@ -26,6 +26,10 @@
                 </a>
             </div>
         </div>
+        <div class="col center">
+            <h1>Sir Bofi in Media</h1>
+            <PressReleases/>
+        </div>
     </div>
     <div class="secondary-container roadmap-and-tokenomics-section">
         <div class="w-full" id="roadmap">
@@ -117,6 +121,7 @@
     import CommunityEvents from "./components/CommunityEvents.svelte";
     import SocialsList from "./components/SocialsList.svelte";
     import Landing from "./components/Landing.svelte";
+    import PressReleases from "./components/PressReleases.svelte";
 
     let cfasl = false;
     let position_available = false;

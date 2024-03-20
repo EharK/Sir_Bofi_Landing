@@ -21,7 +21,7 @@
             title: "Reddit Post Contest",
             text: "Post a link to your post on our Telegram group and win a prize!",
             ongoing: true,
-            href: "https://t.me/SirBofiportal"
+            href: "https://www.reddit.com/r/BofiCommunity/"
         },
         {
             src: "banners/tg-invite-contest.png",

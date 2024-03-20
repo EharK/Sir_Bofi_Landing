@@ -20,6 +20,7 @@
 :root {
     --light: #f2f2f2;
     --slight: #e6e6e6;
+    --mid-light: #d9d9d9;
     --sdark: #333333;
     --dark: #1a1a1a;
     --highlight: rgba(255, 230, 128, 0.4);
