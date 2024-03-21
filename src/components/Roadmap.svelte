@@ -40,12 +40,12 @@
                     <ul>
                         <RoadmapListItem checked={true}>DEXScreener project info listing</RoadmapListItem>
                         <RoadmapListItem checked={true}>Homepage overhaul</RoadmapListItem>
+                        <RoadmapListItem checked={true}>300+ press releases</RoadmapListItem>
                         <RoadmapListItem>WalletConnectV2 integration</RoadmapListItem>
                         <RoadmapListItem>Bofi Platform Token Gating feature</RoadmapListItem>
                         <RoadmapListItem>Subscription feature</RoadmapListItem>
-                        <RoadmapListItem>Sir Bofi Web Platform launch</RoadmapListItem>
+                        <RoadmapListItem>Sir Bofi Web Platform launch 10.04.2024</RoadmapListItem>
                         <RoadmapListItem>Massive marketing campaign</RoadmapListItem>
-                        <RoadmapListItem>Press releases</RoadmapListItem>
                         <RoadmapListItem>DEXTools Validation And Score</RoadmapListItem>
                     </ul>
                 </PadWithArrow>
@@ -105,7 +105,6 @@
 <script>
     import PadWithArrow from "./PadWithArrow.svelte";
     import {onMount} from "svelte";
-    import Checkbox from "./widgets/Checkbox.svelte";
     import RoadmapListItem from "./widgets/RoadmapListItem.svelte";
 
     onMount(() => {
@@ -132,8 +131,10 @@
         window.addEventListener('mouseout', () => {
             fidget.style.transform = `rotateY(0deg)`;
         });
+
     });
 </script>
+
 <style>
 
     h2 {
@@ -216,6 +217,7 @@
 
         .checkpoints-container :global(.pad:hover) {
             background-color: var(--dark);
+            outline: 1px solid var(--sdark);
         }
 
         .checkpoints-container :global(.pad li) {

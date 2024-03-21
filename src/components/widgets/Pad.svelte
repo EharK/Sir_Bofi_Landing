@@ -14,7 +14,7 @@
         padding: 20px 60px;
         border-radius: 4px;
         background-color: var(--dark);
-        outline: 1px solid rgba(230, 230, 230, 0.2);
+        outline: 1px solid var(--sdark);
         outline-offset: -1px;
         transition: all 0.15s;
     }

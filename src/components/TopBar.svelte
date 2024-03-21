@@ -93,8 +93,6 @@
             window.addEventListener('mousemove', (e) => {
                 if (window.innerWidth > 900 && e.clientY < 100) {
                     topBar.style.top = '20px';
-                } else if (window.innerWidth > 900 && e.clientY > 100 && window.scrollY > 700) {
-                    topBar.style.top = '-100px';
                 }
             });
             if (window.innerWidth < 900) {

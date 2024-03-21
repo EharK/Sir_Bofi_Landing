@@ -197,7 +197,6 @@
         padding: 40px 0;
         height: 200px;
         justify-content: space-around;
-        align-items: flex-start !important;
     }
 
     .overlay-items-container {
