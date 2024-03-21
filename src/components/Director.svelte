@@ -25,7 +25,6 @@
     import Pad from "./widgets/Pad.svelte";
     import PadWithArrow from "./PadWithArrow.svelte";
     import {onMount} from "svelte";
-
     const getElementCenter = function (el) {
         const rect = el.getBoundingClientRect();
         return {
