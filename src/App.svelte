@@ -5,9 +5,9 @@
     <Landing/>
     <div class="secondary-container dark">
         <div class="col center" id="demonstration">
-            <h1>See How It Works</h1>
+            <h1>Platform Launch</h1>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ZDBe69n0Usw"
+                <iframe src="https://www.youtube.com/embed/wR6S7RxLGUU?si=sSIzyMTd_CPkJ33y"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
@@ -297,6 +297,7 @@
         max-width: 50%;
         min-width: 50%;
         aspect-ratio: 16/9;
+        border-radius: 8px;
     }
 
     .video-container iframe {
