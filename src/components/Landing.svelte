@@ -10,9 +10,9 @@
                         Tell Me More
                     </button>
                 </a>
-                <a href="https://demo.sirbofi.com/" target="_blank">
+                <a href="https://app.sirbofi.com/" target="_blank">
                     <button class="big-button colored">
-                        <span>Try Free Demo</span>
+                        <span>Launch App</span>
                     </button>
                 </a>
             </div>

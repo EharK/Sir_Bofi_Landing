@@ -41,10 +41,10 @@
                         <RoadmapListItem checked={true}>DEXScreener project info listing</RoadmapListItem>
                         <RoadmapListItem checked={true}>Homepage overhaul</RoadmapListItem>
                         <RoadmapListItem checked={true}>300+ press releases</RoadmapListItem>
-                        <RoadmapListItem>WalletConnectV2 integration</RoadmapListItem>
-                        <RoadmapListItem>Bofi Platform Token Gating feature</RoadmapListItem>
-                        <RoadmapListItem>Subscription feature</RoadmapListItem>
-                        <RoadmapListItem>Sir Bofi Web Platform launch 10.04.2024</RoadmapListItem>
+                        <RoadmapListItem checked={true}>WalletConnectV2 integration</RoadmapListItem>
+                        <RoadmapListItem checked={true}>Bofi Platform Token Gating feature</RoadmapListItem>
+                        <RoadmapListItem checked={true}>Subscription feature</RoadmapListItem>
+                        <RoadmapListItem checked={true}>Sir Bofi Web Platform launch 10.04.2024</RoadmapListItem>
                         <RoadmapListItem>Massive marketing campaign</RoadmapListItem>
                         <RoadmapListItem>DEXTools Validation And Score</RoadmapListItem>
                     </ul>

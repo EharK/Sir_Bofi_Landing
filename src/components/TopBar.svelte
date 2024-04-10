@@ -48,8 +48,8 @@
              role="button" tabindex="0">
             <img src="burger.svg" alt="">
         </div>
-        <button class="big-button colored cta">
-            Try Free Demo
+        <button on:click={runApp} class="big-button colored cta">
+            Launch App
         </button>
     </div>
 </main>
@@ -100,6 +100,10 @@
             }
         }
     );
+
+    function runApp() {
+        window.open('https://app.sirbofi.com', '_blank');
+    }
 </script>
 
 <style>

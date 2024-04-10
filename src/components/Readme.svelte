@@ -44,9 +44,9 @@
             name Cyrbofi which is a combination of letters from the phrase “[C]r[y]pto a[rb]itrage
             [o]pportunity [fi]nder”.
         </p>
-        <a href="https://demo.sirbofi.com/" target="_blank">
+        <a href="https://app.sirbofi.com/" target="_blank">
             <button class="big-button colored">
-                <span>Try Free Demo</span>
+                <span>Launch App</span>
             </button>
         </a>
     </div>
